@@ -28,10 +28,11 @@
 
 1. In your repo on GitHub, go to **Settings** → **Pages** (left sidebar).
 2. Under **Build and deployment**:
-   - **Source:** select **GitHub Actions**.
-3. Save. No need to choose a branch or folder — the workflow uses the `site` folder.
+   - **Source:** select **Deploy from a branch**.
+   - **Branch:** select **gh-pages** and **/ (root)**.
+3. Click **Save**.
 
-After the first push, the **Actions** tab will run the "Deploy to GitHub Pages" workflow. When it finishes (about 1–2 minutes), your site will be live at:
+After the first push to `main`, the **Actions** tab runs and publishes the `site` folder to the `gh-pages` branch. When that workflow finishes (1–2 min), your site will be live at:
 
 - **https://YOUR_USERNAME.github.io/YOUR_REPO_NAME/**
 
