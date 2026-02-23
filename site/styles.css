@@ -166,14 +166,20 @@ body {
 
 @media (max-width: 640px) {
   .logo-img {
-    height: 44px;
-    max-width: 50px;
+    height: 40px;
+    max-width: 45px;
   }
   .logo-company {
-    font-size: 1.1rem;
+    font-size: 1rem;
+  }
+  .logo-tagline {
+    display: none;
   }
   .logo-text {
-    display: none;
+    display: flex;
+  }
+  .logo {
+    gap: 8px;
   }
 }
 
