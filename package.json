@@ -1,0 +1,8 @@
+{
+  "name": "getiva-solutions-website",
+  "private": true,
+  "scripts": {
+    "start": "npx serve site",
+    "dev": "npx serve site"
+  }
+}

@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Getiva Solutions — We Get It Done For You | IT Staffing & Workforce Solutions</title>
+  <link rel="icon" href="img/logo.png" type="image/png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="motion.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="index.html" class="logo"><img src="img/logo.png" alt="Getiva Solutions — We Get It Done For You" class="logo-img"></a>
+      <button type="button" class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
+      <nav class="main-nav" id="main-nav" aria-label="Main">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="industries.html">Industries</a></li>
+          <li><a href="candidates.html">Candidates</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li class="nav-cta">
+            <a href="contact.html" class="btn btn-primary">Hire Talent</a>
+            <a href="candidates.html" class="btn btn-secondary">Find Jobs</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <!-- 1. Hero with video loop + dark overlay for readable text -->
+    <section class="hero-enterprise hero-enterprise--video">
+      <div class="hero-video-wrap">
+        <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&q=80" aria-hidden="true" id="hero-video">
+          <source src="https://cdn.mixkit.co/videos/preview/mixkit-business-team-in-a-meeting-4470-large.mp4" type="video/mp4">
+          <source src="https://cdn.pixabay.com/video/20220825/174762_740098963_lg.mp4" type="video/mp4">
+          <!-- Or use your own: add site/video/hero.mp4 and use src="video/hero.mp4" -->
+        </video>
+      </div>
+      <div class="hero-enterprise-overlay"></div>
+      <div class="container hero-enterprise-content">
+        <p class="hero-tagline">We <span class="hero-tagline-highlight">Get It Done For You</span></p>
+        <h1>IT Staffing & Workforce Solutions That Deliver</h1>
+        <p class="subhead">We partner with organizations across the United States to scale their technology teams—contract, direct hire, and project-based. Get the talent you need, with the compliance and reliability enterprise demands.</p>
+        <div class="hero-cta">
+          <a href="contact.html" class="btn btn-primary">Hire Talent</a>
+          <a href="candidates.html" class="btn btn-secondary">Find Jobs</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Stats / Credibility -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="stat-value" data-count="10000" data-suffix="+">10,000+</span>
+            <span class="stat-label">Talent Network</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value" data-count="5" data-suffix="+">5+</span>
+            <span class="stat-label">Industries Served</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">Enterprise</span>
+            <span class="stat-label">Placements Delivered</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">National</span>
+            <span class="stat-label">Client Focus</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Trusted by leading organizations (industries we serve) -->
+    <section class="client-logos-section">
+      <div class="container">
+        <h2 class="client-logos-title">Trusted by Leading Organizations</h2>
+        <p class="client-logos-subtitle">We deliver talent and workforce solutions across key sectors of the US economy.</p>
+        <div class="industries-carousel-wrap">
+          <button type="button" class="carousel-btn carousel-btn--prev industries-carousel-prev" aria-label="Previous industries"><span aria-hidden="true">‹</span></button>
+          <button type="button" class="carousel-btn carousel-btn--next industries-carousel-next" aria-label="Next industries"><span aria-hidden="true">›</span></button>
+          <div class="client-logos-grid industries-carousel" id="industries-carousel" aria-label="Industries and sectors we serve">
+            <a href="industries.html" class="industry-card" style="--industry-bg: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80');">
+              <span class="industry-card-bg" aria-hidden="true"></span>
+              <span class="industry-card-overlay"></span>
+              <span class="industry-card-label">Financial Services</span>
+            </a>
+            <a href="industries.html" class="industry-card" style="--industry-bg: url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80');">
+              <span class="industry-card-bg" aria-hidden="true"></span>
+              <span class="industry-card-overlay"></span>
+              <span class="industry-card-label">Healthcare</span>
+            </a>
+            <a href="industries.html" class="industry-card" style="--industry-bg: url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80');">
+              <span class="industry-card-bg" aria-hidden="true"></span>
+              <span class="industry-card-overlay"></span>
+              <span class="industry-card-label">Technology</span>
+            </a>
+            <a href="industries.html" class="industry-card" style="--industry-bg: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=80');">
+              <span class="industry-card-bg" aria-hidden="true"></span>
+              <span class="industry-card-overlay"></span>
+              <span class="industry-card-label">Retail</span>
+            </a>
+            <a href="industries.html" class="industry-card" style="--industry-bg: url('https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=600&q=80');">
+              <span class="industry-card-bg" aria-hidden="true"></span>
+              <span class="industry-card-overlay"></span>
+              <span class="industry-card-label">Manufacturing</span>
+            </a>
+          </div>
+          <div class="industries-carousel-dots carousel-dots" id="industries-carousel-dots" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Services Grid (with IT imagery) -->
+    <section class="section section--elevated">
+      <div class="container text-center">
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-intro">From single placements to full workforce solutions and vendor support. We get it done for you.</p>
+        <div class="section-image-bar">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&q=80" alt="Technology workspace" class="section-image-bar-img">
+        </div>
+        <div class="services-carousel-wrap">
+          <button type="button" class="carousel-btn carousel-btn--prev" aria-label="Previous services"><span aria-hidden="true">‹</span></button>
+          <button type="button" class="carousel-btn carousel-btn--next" aria-label="Next services"><span aria-hidden="true">›</span></button>
+          <div class="services-grid services-carousel" id="services-carousel">
+          <a href="services.html#staffing" class="service-card">
+            <div class="service-card-image" style="background-image: url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&q=80');" aria-hidden="true"></div>
+            <div class="service-card-body">
+              <div class="service-icon" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <h3>IT Staffing</h3>
+              <p>Contract, contract-to-hire, and direct hire. We handle recruiting, compliance, and placement so you can focus on delivery.</p>
+            </div>
+          </a>
+          <a href="services.html#workforce" class="service-card">
+            <div class="service-card-image" style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&q=80');" aria-hidden="true"></div>
+            <div class="service-card-body">
+              <div class="service-icon" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+              </div>
+              <h3>Workforce Solutions</h3>
+              <p>Volume hiring, managed teams, and flexible workforce design. Scale up or down with one partner.</p>
+            </div>
+          </a>
+          <a href="services.html#consulting" class="service-card">
+            <div class="service-card-image" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80');" aria-hidden="true"></div>
+            <div class="service-card-body">
+              <div class="service-icon" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+              </div>
+              <h3>Consulting</h3>
+              <p>Workforce planning, role design, and vendor alignment. Advisory support for your talent strategy.</p>
+            </div>
+          </a>
+          <a href="services.html#vendor" class="service-card">
+            <div class="service-card-image" style="background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=80');" aria-hidden="true"></div>
+            <div class="service-card-body">
+              <div class="service-icon" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              </div>
+              <h3>Vendor & MSP</h3>
+              <p>Built for enterprise and MSP programs. Compliance, VMS integration, and consistent delivery.</p>
+            </div>
+          </a>
+          </div>
+          <div class="carousel-dots" id="services-carousel-dots" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Employers | Candidates | Consulting -->
+    <section class="section section-alt">
+      <div class="container">
+        <h2 class="section-title text-center">Who We Serve</h2>
+        <p class="section-intro text-center">Whether you need to hire talent or find your next role, we deliver with the same commitment to quality and execution.</p>
+        <div class="audience-sections">
+          <div class="audience-card">
+            <h3>Employers</h3>
+            <p>Fill critical IT roles quickly with vetted talent. Contract, contract-to-hire, direct hire, and project-based teams. We own recruiting and compliance so you can focus on outcomes.</p>
+            <a href="contact.html" class="btn btn-primary">Hire Talent</a>
+          </div>
+          <div class="audience-card">
+            <h3>Candidates</h3>
+            <p>Access opportunities at established organizations across the US. Contract and full-time roles in technology, healthcare, financial services, and more. Clear communication and professional representation.</p>
+            <a href="candidates.html" class="btn btn-secondary">Find Jobs</a>
+          </div>
+          <div class="audience-card">
+            <h3>Consulting Services</h3>
+            <p>Workforce planning, role architecture, and vendor program alignment. Advisory support to design and execute your talent strategy with confidence.</p>
+            <a href="services.html#consulting" class="btn btn-secondary">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Why Choose Us (alternating: image left, content right) -->
+    <section class="section section-alt">
+      <div class="split-section">
+        <div class="split-section-image" style="background-image: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80');" role="img" aria-label="Business partnership and handshake">
+        </div>
+        <div class="split-section-content">
+          <div class="container">
+            <h2 class="section-title">Why Choose Getiva Solutions</h2>
+            <p class="section-intro">We are built to be a trusted delivery partner for mid-market and enterprise clients. Execution, reliability, and partnership are at the center of what we do.</p>
+            <div class="why-choose-grid why-choose-grid--compact">
+              <div class="why-choose-card">
+                <h3>Execution</h3>
+                <p>We get it done for you. Recruiting, compliance, and delivery are our responsibility. You get qualified talent on time—without carrying the operational burden.</p>
+              </div>
+              <div class="why-choose-card">
+                <h3>Reliability</h3>
+                <p>Consistent quality, clear SLAs, and dedicated points of contact. We perform within MSP and vendor programs so procurement and hiring managers can depend on us.</p>
+              </div>
+              <div class="why-choose-card">
+                <h3>Partnership</h3>
+                <p>We succeed when you succeed. Our goal is to become a long-term extension of your talent strategy—not a one-off vendor. We invest in understanding your needs and culture.</p>
+              </div>
+            </div>
+            <p style="margin-top: 24px;"><a href="about.html" class="btn btn-primary">About Getiva Solutions</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Industries (with imagery) -->
+    <section class="section section-alt">
+      <div class="container text-center">
+        <h2 class="section-title">Industries We Serve</h2>
+        <p class="section-intro">Our recruiters understand the regulatory, technical, and operational context of each sector—so we place talent that fits your environment.</p>
+        <div class="industries-grid industries-grid--with-images">
+          <a href="industries.html#financial" class="industry-card-visual industry-card--img" style="background-image: url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400&q=80');"><span class="industry-card-label">Financial Services</span></a>
+          <a href="industries.html#healthcare" class="industry-card-visual industry-card--img" style="background-image: url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400&q=80');"><span class="industry-card-label">Healthcare</span></a>
+          <a href="industries.html#technology" class="industry-card-visual industry-card--img" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&q=80');"><span class="industry-card-label">Technology</span></a>
+          <a href="industries.html#retail" class="industry-card-visual industry-card--img" style="background-image: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&q=80');"><span class="industry-card-label">Retail & eCommerce</span></a>
+          <a href="industries.html#manufacturing" class="industry-card-visual industry-card--img" style="background-image: url('https://images.unsplash.com/photo-1565793298595-6a879b1d7502?w=400&q=80');"><span class="industry-card-label">Manufacturing</span></a>
+        </div>
+        <p class="mb-0" style="margin-top: 24px;"><a href="industries.html" class="btn btn-secondary">View All Industries</a></p>
+      </div>
+    </section>
+
+    <!-- 7. How We Deliver (Process diagram) -->
+    <section class="section section-dark process-section">
+      <div class="container text-center">
+        <h2 class="section-title">How We Deliver Staffing Solutions</h2>
+        <p class="section-intro">A structured, accountable process from requirement to placement—so you know what to expect every time.</p>
+        <div class="process-diagram">
+          <div class="process-step">
+            <div class="process-step-num">1</div>
+            <h3>Understand</h3>
+            <p>We clarify your role, team, and culture so we target the right skills and fit.</p>
+          </div>
+          <div class="process-connector" aria-hidden="true"></div>
+          <div class="process-step">
+            <div class="process-step-num">2</div>
+            <h3>Source & Screen</h3>
+            <p>Our network and recruiting engine deliver vetted candidates. We screen for skills and fit before you see anyone.</p>
+          </div>
+          <div class="process-connector" aria-hidden="true"></div>
+          <div class="process-step">
+            <div class="process-step-num">3</div>
+            <h3>Present & Coordinate</h3>
+            <p>We present qualified candidates and coordinate interviews, feedback, and logistics.</p>
+          </div>
+          <div class="process-connector" aria-hidden="true"></div>
+          <div class="process-step">
+            <div class="process-step-num">4</div>
+            <h3>Place & Support</h3>
+            <p>From offer through start—and beyond. We handle compliance and stay accountable for the result.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Testimonials / Credibility (with imagery) -->
+    <section class="section section--elevated">
+      <div class="container text-center">
+        <h2 class="section-title">What Our Clients Say</h2>
+        <p class="section-intro">Organizations rely on Getiva Solutions for quality talent and reliable delivery. Here’s what matters to them.</p>
+        <div class="testimonials-grid">
+          <div class="testimonial-card testimonial-card--with-bg" style="background-image: linear-gradient(rgba(10,37,64,0.92), rgba(10,37,64,0.92)), url('https://images.unsplash.com/photo-1573164713988-8665fc963095?w=600&q=80');">
+            <p class="quote">“We needed a partner who could fill technical roles quickly without sacrificing quality. Getiva delivered—and the process was straightforward from start to finish.”</p>
+            <p class="attribution"><strong>— Enterprise client</strong>, Technology sector</p>
+          </div>
+          <div class="testimonial-card">
+            <p class="quote">“Compliance and documentation were non‑negotiables for our vendor program. Getiva met our requirements and performed consistently as a preferred supplier.”</p>
+            <p class="attribution"><strong>— Vendor management</strong>, Financial services</p>
+          </div>
+          <div class="testimonial-card">
+            <p class="quote">“They understood our industry and our roles. The candidates they sent were actually a fit—which saved us time and got our project back on track.”</p>
+            <p class="attribution"><strong>— Hiring manager</strong>, Healthcare</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. CTA Banner -->
+    <section class="cta-banner">
+      <div class="cta-banner-inner">
+        <h2>Ready to Partner With Us?</h2>
+        <p>Whether you need to hire IT talent or find your next role, we’re here to help. Get in touch and we’ll respond within one business day.</p>
+        <div class="buttons">
+          <a href="contact.html" class="btn btn-white">Hire Talent</a>
+          <a href="candidates.html" class="btn btn-secondary">Find Jobs</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 10. Structured Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><img src="img/logo.png" alt="Getiva Solutions" class="logo-img"></a>
+        <p class="footer-tagline">We Get It Done For You.</p>
+        <p>IT staffing, workforce solutions, and consulting for enterprise clients across the United States.</p>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="industries.html">Industries</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html#staffing">IT Staffing</a></li>
+          <li><a href="services.html#workforce">Workforce Solutions</a></li>
+          <li><a href="services.html#consulting">Consulting</a></li>
+          <li><a href="services.html#vendor">Vendor & MSP</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Candidates</h4>
+        <ul>
+          <li><a href="candidates.html">Find Jobs</a></li>
+          <li><a href="candidates.html">Submit Resume</a></li>
+          <li><a href="contact.html">Contact Recruiting</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="mb-0">© 2025 Getiva Solutions. All rights reserved.</p>
+      <p class="mb-0">We Get It Done For You.</p>
+    </div>
+  </footer>
+  <script src="nav.js"></script>
+  <script src="motion.js"></script>
+  <script>
+    (function() {
+      var v = document.getElementById('hero-video');
+      if (v) {
+        v.play().catch(function() {});
+        document.body.addEventListener('click', function once() {
+          v.play().catch(function() {});
+          document.body.removeEventListener('click', once);
+        }, { once: true });
+      }
+    })();
+  </script>
+  <script>
+    (function() {
+      var carousel = document.getElementById('services-carousel');
+      var dotsEl = document.getElementById('services-carousel-dots');
+      var prevBtn = document.querySelector('.carousel-btn--prev');
+      var nextBtn = document.querySelector('.carousel-btn--next');
+      if (!carousel || !dotsEl) return;
+      var cards = carousel.querySelectorAll('.service-card');
+      var n = cards.length;
+      if (n === 0) return;
+      for (var i = 0; i < n; i++) {
+        var dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'carousel-dot' + (i === 0 ? ' is-active' : '');
+        dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+        dot.dataset.index = i;
+        dotsEl.appendChild(dot);
+      }
+      var dots = dotsEl.querySelectorAll('.carousel-dot');
+      function getIndex() {
+        var scrollLeft = carousel.scrollLeft;
+        var cardWidth = cards[0].offsetWidth + 24;
+        return Math.min(n - 1, Math.round(scrollLeft / cardWidth));
+      }
+      function updateDots(index) {
+        dots.forEach(function(d, i) { d.classList.toggle('is-active', i === index); });
+      }
+      function scrollToIndex(index) {
+        var cardWidth = cards[0].offsetWidth + 24;
+        carousel.scrollTo({ left: index * cardWidth, behavior: 'smooth' });
+      }
+      carousel.addEventListener('scroll', function() { updateDots(getIndex()); });
+      dots.forEach(function(dot) {
+        dot.addEventListener('click', function() { scrollToIndex(parseInt(dot.dataset.index, 10)); });
+      });
+      if (prevBtn) prevBtn.addEventListener('click', function() {
+        var i = getIndex();
+        scrollToIndex(Math.max(0, i - 1));
+      });
+      if (nextBtn) nextBtn.addEventListener('click', function() {
+        var i = getIndex();
+        scrollToIndex(Math.min(n - 1, i + 1));
+      });
+    })();
+  </script>
+  <script>
+    (function() {
+      var wrap = document.querySelector('.industries-carousel-wrap');
+      var carousel = document.getElementById('industries-carousel');
+      var dotsEl = document.getElementById('industries-carousel-dots');
+      var prevBtn = wrap && wrap.querySelector('.industries-carousel-prev');
+      var nextBtn = wrap && wrap.querySelector('.industries-carousel-next');
+      if (!carousel || !dotsEl) return;
+      var cards = carousel.querySelectorAll('.industry-card');
+      var n = cards.length;
+      if (n === 0) return;
+      for (var i = 0; i < n; i++) {
+        var dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'carousel-dot' + (i === 0 ? ' is-active' : '');
+        dot.setAttribute('aria-label', 'Go to industry ' + (i + 1));
+        dot.dataset.index = i;
+        dotsEl.appendChild(dot);
+      }
+      var dots = dotsEl.querySelectorAll('.carousel-dot');
+      function getIndex() {
+        var scrollLeft = carousel.scrollLeft;
+        var cardWidth = cards[0].offsetWidth + 24;
+        return Math.min(n - 1, Math.max(0, Math.round(scrollLeft / cardWidth)));
+      }
+      function updateDots(index) {
+        dots.forEach(function(d, i) { d.classList.toggle('is-active', i === index); });
+      }
+      function scrollToIndex(index) {
+        var cardWidth = cards[0].offsetWidth + 24;
+        carousel.scrollTo({ left: index * cardWidth, behavior: 'smooth' });
+      }
+      carousel.addEventListener('scroll', function() { updateDots(getIndex()); });
+      dots.forEach(function(dot) {
+        dot.addEventListener('click', function() { scrollToIndex(parseInt(dot.dataset.index, 10)); });
+      });
+      if (prevBtn) prevBtn.addEventListener('click', function() {
+        var i = getIndex();
+        scrollToIndex(Math.max(0, i - 1));
+      });
+      if (nextBtn) nextBtn.addEventListener('click', function() {
+        var i = getIndex();
+        scrollToIndex(Math.min(n - 1, i + 1));
+      });
+    })();
+  </script>
+</body>
+</html>
