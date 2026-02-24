@@ -3289,6 +3289,39 @@ body.menu-open .nav-backdrop {
   margin-top: 8px;
 }
 
+/* File Upload Styling */
+.file-upload-wrapper {
+  margin-bottom: 16px;
+}
+
+.contact-form input[type="file"] {
+  width: 100%;
+  padding: 12px;
+  border: 2px dashed var(--color-border, #d1d5db);
+  border-radius: 8px;
+  background: var(--color-surface, #f9fafb);
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.contact-form input[type="file"]:hover {
+  border-color: var(--color-accent, #1a56db);
+  background: var(--color-surface-hover, #f3f4f6);
+}
+
+.contact-form input[type="file"]:focus {
+  outline: none;
+  border-color: var(--color-accent, #1a56db);
+  box-shadow: 0 0 0 3px rgba(26, 86, 219, 0.1);
+}
+
+.file-hint {
+  font-size: 0.8rem;
+  color: var(--color-text-muted, #6b7280);
+  margin-top: 6px;
+  margin-bottom: 0;
+}
+
 /* Utility */
 .text-center { text-align: center; }
 .mb-0 { margin-bottom: 0; }

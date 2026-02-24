@@ -76,7 +76,7 @@
       <p>Use the form below and we will respond within one business day. For urgent client needs, please note “Urgent” in your message.</p>
     </div>
 
-    <form class="contact-form" id="contact-form" action="https://formsubmit.co/info@getivasolutions.com" method="POST">
+    <form class="contact-form" id="contact-form" action="https://formsubmit.co/info@getivasolutions.com" method="POST" enctype="multipart/form-data">
       <input type="hidden" name="_subject" value="✅ Thank You - Getiva Solutions">
       <input type="hidden" name="_next" value="https://getivasolutions.com/contact.html?submitted=true">
       <input type="hidden" name="_captcha" value="true">
@@ -126,7 +126,11 @@ The Getiva Solutions Team
 
       <label for="message">Message *</label>
       <textarea id="message" name="message" required></textarea>
-
+      <label for="attachment">Attach Resume/Document (optional)</label>
+      <div class="file-upload-wrapper">
+        <input type="file" id="attachment" name="attachment" accept=".pdf,.doc,.docx,.odt,.odf,.rtf,.txt,.jpg,.jpeg,.png,.gif,.webp">
+        <p class="file-hint">Accepted formats: PDF, Word (.doc, .docx), ODF (.odt), RTF, TXT, Images (JPG, PNG, GIF, WEBP). Max 5MB.</p>
+      </div>
       <p class="note">We typically respond within one business day. For urgent client needs, please note “Urgent” in your message.</p>
 
       <button type="submit" class="btn btn-primary">Send message</button>
