@@ -1,18 +1,163 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Getiva Solutions - Admin</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - Getiva Solutions</title>
   <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      margin: 0;
-      padding: 0;
+      background: #f3f4f6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
+    .header {
+      background: #1a56db;
+      color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header h1 { font-size: 1.5rem; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 24px; flex: 1; }
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .card h2 { margin-bottom: 16px; color: #111827; }
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      cursor: pointer;
+      border: none;
+      font-size: 1rem;
+    }
+    .btn-primary { background: #1a56db; color: white; }
+    .btn-primary:hover { background: #1e40af; }
+    .btn-secondary { background: #e5e7eb; color: #374151; }
+    .options { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 16px; }
+    .option-card {
+      flex: 1;
+      min-width: 250px;
+      padding: 24px;
+      border: 2px solid #e5e7eb;
+      border-radius: 12px;
+      text-align: center;
+    }
+    .option-card:hover { border-color: #1a56db; }
+    .option-card h3 { margin-bottom: 8px; }
+    .option-card p { color: #6b7280; margin-bottom: 16px; font-size: 0.9rem; }
+    .step { display: flex; gap: 16px; margin-bottom: 16px; padding: 16px; background: #f9fafb; border-radius: 8px; }
+    .step-num { width: 32px; height: 32px; background: #1a56db; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0; }
+    .step-content h4 { margin-bottom: 4px; }
+    .step-content p { color: #6b7280; font-size: 0.9rem; }
+    code { background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9rem; }
+    a { color: #1a56db; }
   </style>
 </head>
 <body>
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <div class="header">
+    <h1>🔧 Getiva Solutions Admin</h1>
+    <a href="/" class="btn btn-secondary">← Back to Site</a>
+  </div>
+  
+  <div class="container">
+    <div class="card">
+      <h2>📋 Manage Job Listings</h2>
+      <p>Choose how you want to edit jobs:</p>
+      
+      <div class="options">
+        <div class="option-card">
+          <h3>🌐 Edit on GitHub</h3>
+          <p>Edit the jobs.json file directly on GitHub.com - works from any device</p>
+          <a href="https://github.com/Kosanah/getivasolutions/edit/main/data/jobs.json" target="_blank" class="btn btn-primary">Edit Jobs on GitHub</a>
+        </div>
+        
+        <div class="option-card">
+          <h3>👁️ View Current Jobs</h3>
+          <p>See the current job listings on your careers page</p>
+          <a href="/careers.html" class="btn btn-secondary">View Careers Page</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <h2>📝 How to Add a New Job</h2>
+      
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h4>Click "Edit Jobs on GitHub"</h4>
+          <p>This opens the jobs.json file in GitHub's editor</p>
+        </div>
+      </div>
+      
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h4>Add a new job entry</h4>
+          <p>Copy an existing job block and modify the details. Make sure to add a comma after the previous job's closing <code>}</code></p>
+        </div>
+      </div>
+      
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <h4>Commit changes</h4>
+          <p>Scroll down, add a commit message like "Added new job", and click <strong>Commit changes</strong></p>
+        </div>
+      </div>
+      
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <h4>Wait 1-2 minutes</h4>
+          <p>GitHub Pages will automatically deploy. Refresh the careers page to see your new job!</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <h2>📄 Job Template</h2>
+      <p>Copy this template when adding a new job:</p>
+      <pre style="background: #1f2937; color: #f9fafb; padding: 16px; border-radius: 8px; overflow-x: auto; margin-top: 12px;">
+{
+  "title": "Job Title Here",
+  "id": "job-id-here",
+  "type": "contract",
+  "location": "Remote (US)",
+  "duration": "6+ months",
+  "posted": "Feb 2026",
+  "description": "Job description goes here...",
+  "requirements": [
+    "Requirement 1",
+    "Requirement 2",
+    "Requirement 3"
+  ],
+  "active": true
+}</pre>
+      <p style="margin-top: 12px; color: #6b7280;"><strong>Type options:</strong> <code>contract</code>, <code>fulltime</code>, <code>contract-to-hire</code></p>
+      <p style="color: #6b7280;"><strong>To hide a job:</strong> Set <code>"active": false</code></p>
+    </div>
+    
+    <div class="card">
+      <h2>🔗 Quick Links</h2>
+      <p style="margin-bottom: 12px;">
+        <a href="https://github.com/Kosanah/getivasolutions" target="_blank">📂 GitHub Repository</a> |
+        <a href="https://github.com/Kosanah/getivasolutions/edit/main/data/jobs.json" target="_blank">📝 Edit Jobs</a> |
+        <a href="/careers.html">👀 View Careers Page</a> |
+        <a href="/contact.html">📧 View Contact Page</a>
+      </p>
+    </div>
+  </div>
 </body>
 </html>
