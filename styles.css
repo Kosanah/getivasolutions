@@ -131,11 +131,16 @@ body {
 
 .logo-img {
   display: block;
-  height: 44px;
+  height: 52px;
   width: auto;
-  max-width: 50px;
+  max-width: 60px;
   object-fit: contain;
   object-position: left center;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .logo-text {
