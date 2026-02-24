@@ -2807,6 +2807,29 @@ body.menu-open .nav-backdrop {
   text-decoration: underline;
 }
 
+/* Footer Contact Info */
+.footer-contact-info {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-contact-info p {
+  margin: 0 0 12px 0;
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.6;
+}
+
+.footer-contact-info a {
+  color: rgba(255,255,255,0.9);
+  font-weight: 500;
+}
+
+.footer-contact-info a:hover {
+  color: var(--color-primary);
+}
+
 .footer-bottom {
   max-width: var(--max-width);
   margin: 0 auto;
