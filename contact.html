@@ -76,7 +76,10 @@
       <p>Use the form below and we will respond within one business day. For urgent client needs, please note “Urgent” in your message.</p>
     </div>
 
-    <form class="contact-form" id="contact-form" action="#" method="post">
+    <form class="contact-form" id="contact-form" action="https://formspree.io/f/info@getivasolutions.com" method="POST">
+      <input type="hidden" name="_subject" value="New Contact Form Submission - Getiva Solutions">
+      <input type="hidden" name="_next" value="https://getivasolutions.com/contact.html?submitted=true">
+      
       <label for="name">Full name *</label>
       <input type="text" id="name" name="name" required>
 
@@ -106,10 +109,10 @@
       <button type="submit" class="btn btn-primary">Send message</button>
     </form>
     <script>
-      document.getElementById('contact-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        alert('Thank you. This is a demo form. In production, connect it to your email or form service.');
-      });
+      // Show success message if form was submitted
+      if (window.location.search.includes('submitted=true')) {
+        document.getElementById('contact-form').innerHTML = '<div class="success-message" style="text-align:center;padding:40px;"><h3 style="color:#059669;">Thank you!</h3><p>Your message has been sent. We will respond within one business day.</p></div>';
+      }
     </script>
 
     <div class="content-block text-center">
