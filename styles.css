@@ -417,9 +417,9 @@ body.menu-open .nav-backdrop {
   position: relative;
   background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 50%, var(--color-primary-light) 100%);
   color: #fff;
-  padding: 60px 32px 60px;
+  padding: 48px 32px 48px;
   text-align: center;
-  min-height: 380px;
+  min-height: 360px;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -477,7 +477,8 @@ body.menu-open .nav-backdrop {
   background-image: var(--hero-bg-url, linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 50%, var(--color-primary-light) 100%));
   background-size: cover;
   background-position: center;
-  min-height: calc(100vh - var(--header-height));
+  min-height: 520px;
+  max-height: 600px;
   height: auto;
 }
 
@@ -502,9 +503,9 @@ body.menu-open .nav-backdrop {
 
 .hero-company-name {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
   font-weight: 800;
-  margin: 0 0 16px;
+  margin: 0 0 10px;
   line-height: 1.1;
   letter-spacing: -0.02em;
   color: #fff;
@@ -514,9 +515,9 @@ body.menu-open .nav-backdrop {
 
 .hero-headline {
   font-family: var(--font-display);
-  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
   font-weight: 600;
-  margin: 16px 0 12px;
+  margin: 12px 0 10px;
   line-height: 1.3;
   letter-spacing: -0.01em;
   color: #fff;
@@ -554,26 +555,26 @@ body.menu-open .nav-backdrop {
 }
 
 .hero-enterprise .subhead {
-  font-size: 1.0625rem;
-  line-height: 1.65;
-  color: rgba(255,255,255,0.85);
-  max-width: 580px;
-  margin: 0 auto 20px;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: rgba(255,255,255,0.88);
+  max-width: 620px;
+  margin: 0 auto 16px;
 }
 
 .hero-enterprise .hero-cta {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 16px;
   justify-content: center;
-  margin-top: 32px;
+  margin-top: 20px;
 }
 
 .hero-enterprise .btn-primary {
   background: var(--color-accent);
   color: #fff;
-  padding: 16px 40px;
-  font-size: 0.95rem;
+  padding: 14px 32px;
+  font-size: 0.9rem;
   font-weight: 700;
   border-radius: 50px;
   box-shadow: none;
@@ -591,8 +592,8 @@ body.menu-open .nav-backdrop {
 .hero-enterprise .btn-secondary {
   border: 2px solid rgba(255,255,255,0.6);
   color: #fff;
-  padding: 16px 40px;
-  font-size: 0.95rem;
+  padding: 14px 32px;
+  font-size: 0.9rem;
   font-weight: 600;
   border-radius: 50px;
   background: transparent;
