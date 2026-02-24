@@ -2807,27 +2807,67 @@ body.menu-open .nav-backdrop {
   text-decoration: underline;
 }
 
-/* Footer Contact Info */
-.footer-contact-info {
-  margin-top: 20px;
-  padding-top: 16px;
-  border-top: 1px solid rgba(255,255,255,0.1);
+/* Footer Contact List - Professional Design */
+.footer-contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.footer-contact-info p {
-  margin: 0 0 12px 0;
+.footer-contact-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
   font-size: 0.9rem;
   color: rgba(255,255,255,0.85);
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
-.footer-contact-info a {
-  color: rgba(255,255,255,0.9);
-  font-weight: 500;
-}
-
-.footer-contact-info a:hover {
+.footer-contact-list li svg {
+  flex-shrink: 0;
+  margin-top: 2px;
   color: var(--color-primary);
+  opacity: 0.9;
+}
+
+.footer-contact-list li a {
+  color: rgba(255,255,255,0.85);
+}
+
+.footer-contact-list li a:hover {
+  color: var(--color-primary);
+}
+
+/* Inline Social Links */
+.footer-social-inline {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.footer-social-inline a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.8);
+  transition: all 0.3s ease;
+}
+
+.footer-social-inline a:hover {
+  background: var(--color-primary);
+  color: #fff;
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+/* Legacy Footer Contact Info - Hidden */
+.footer-contact-info {
+  display: none;
 }
 
 .footer-bottom {
@@ -2848,26 +2888,32 @@ body.menu-open .nav-backdrop {
   margin: 0;
 }
 
-/* Social Media Links */
+/* Hide old centered social bar */
 .footer-social {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 24px;
-  padding: 24px 0;
-  border-top: 1px solid rgba(255,255,255,0.1);
-  margin-top: 32px;
+  display: none;
 }
 
-.footer-social a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.1);
-  color: #fff;
+@media (max-width: 900px) {
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-social-inline {
+    justify-content: flex-start;
+  }
+}
   transition: all 0.3s ease;
 }
 
