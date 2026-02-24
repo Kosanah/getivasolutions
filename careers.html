@@ -60,133 +60,8 @@
       <h2>Current Openings</h2>
       <p>We partner with enterprise clients across the United States. Below are some of our active positions. Don't see a perfect match? <a href="#apply">Submit your resume</a> and we'll contact you when relevant opportunities arise.</p>
 
-      <div class="job-listings">
-        
-        <!-- Job 1 -->
-        <div class="job-card" id="job-senior-java">
-          <div class="job-header">
-            <h3>Senior Java Developer</h3>
-            <span class="job-type contract">Contract</span>
-          </div>
-          <div class="job-meta">
-            <span class="job-location">📍 Remote (US)</span>
-            <span class="job-duration">⏱️ 12+ months</span>
-            <span class="job-posted">Posted: Feb 2026</span>
-          </div>
-          <div class="job-description">
-            <p>Join a Fortune 500 financial services client to build and maintain enterprise Java applications. You'll work with microservices architecture, Spring Boot, and cloud technologies.</p>
-            <h4>Requirements:</h4>
-            <ul>
-              <li>7+ years of Java development experience</li>
-              <li>Strong experience with Spring Boot, REST APIs, and microservices</li>
-              <li>Experience with AWS or Azure cloud platforms</li>
-              <li>Familiarity with CI/CD pipelines and containerization (Docker, Kubernetes)</li>
-              <li>Excellent communication skills</li>
-            </ul>
-          </div>
-          <a href="#apply" class="btn btn-primary">Apply Now</a>
-        </div>
-
-        <!-- Job 2 -->
-        <div class="job-card" id="job-cloud-engineer">
-          <div class="job-header">
-            <h3>Cloud Infrastructure Engineer</h3>
-            <span class="job-type fulltime">Full-Time</span>
-          </div>
-          <div class="job-meta">
-            <span class="job-location">📍 Kansas City, MO (Hybrid)</span>
-            <span class="job-duration">⏱️ Permanent</span>
-            <span class="job-posted">Posted: Feb 2026</span>
-          </div>
-          <div class="job-description">
-            <p>Healthcare technology client seeking a Cloud Infrastructure Engineer to design, implement, and manage cloud infrastructure on AWS and Azure. HIPAA compliance experience preferred.</p>
-            <h4>Requirements:</h4>
-            <ul>
-              <li>5+ years of cloud infrastructure experience</li>
-              <li>Strong AWS and/or Azure certifications preferred</li>
-              <li>Experience with Terraform, CloudFormation, or similar IaC tools</li>
-              <li>Knowledge of security best practices and compliance frameworks</li>
-              <li>Healthcare industry experience a plus</li>
-            </ul>
-          </div>
-          <a href="#apply" class="btn btn-primary">Apply Now</a>
-        </div>
-
-        <!-- Job 3 -->
-        <div class="job-card" id="job-data-analyst">
-          <div class="job-header">
-            <h3>Data Analyst</h3>
-            <span class="job-type contract-to-hire">Contract-to-Hire</span>
-          </div>
-          <div class="job-meta">
-            <span class="job-location">📍 St. Louis, MO (On-site)</span>
-            <span class="job-duration">⏱️ 6 months + conversion</span>
-            <span class="job-posted">Posted: Feb 2026</span>
-          </div>
-          <div class="job-description">
-            <p>Financial services firm seeking a Data Analyst to transform business data into actionable insights. You'll work with stakeholders to identify trends and support decision-making.</p>
-            <h4>Requirements:</h4>
-            <ul>
-              <li>3+ years of data analysis experience</li>
-              <li>Proficiency in SQL, Python, or R</li>
-              <li>Experience with BI tools (Tableau, Power BI, or similar)</li>
-              <li>Strong analytical and problem-solving skills</li>
-              <li>Financial services background preferred</li>
-            </ul>
-          </div>
-          <a href="#apply" class="btn btn-primary">Apply Now</a>
-        </div>
-
-        <!-- Job 4 -->
-        <div class="job-card" id="job-devops">
-          <div class="job-header">
-            <h3>DevOps Engineer</h3>
-            <span class="job-type contract">Contract</span>
-          </div>
-          <div class="job-meta">
-            <span class="job-location">📍 Remote (US)</span>
-            <span class="job-duration">⏱️ 6-12 months</span>
-            <span class="job-posted">Posted: Feb 2026</span>
-          </div>
-          <div class="job-description">
-            <p>Technology company seeking a DevOps Engineer to build and maintain CI/CD pipelines, automate infrastructure, and improve deployment processes.</p>
-            <h4>Requirements:</h4>
-            <ul>
-              <li>4+ years of DevOps or SRE experience</li>
-              <li>Strong experience with Jenkins, GitLab CI, or GitHub Actions</li>
-              <li>Proficiency with Docker, Kubernetes, and container orchestration</li>
-              <li>Experience with monitoring tools (Prometheus, Grafana, Datadog)</li>
-              <li>Scripting skills (Bash, Python)</li>
-            </ul>
-          </div>
-          <a href="#apply" class="btn btn-primary">Apply Now</a>
-        </div>
-
-        <!-- Job 5 -->
-        <div class="job-card" id="job-project-manager">
-          <div class="job-header">
-            <h3>IT Project Manager</h3>
-            <span class="job-type fulltime">Full-Time</span>
-          </div>
-          <div class="job-meta">
-            <span class="job-location">📍 Chicago, IL (Hybrid)</span>
-            <span class="job-duration">⏱️ Permanent</span>
-            <span class="job-posted">Posted: Feb 2026</span>
-          </div>
-          <div class="job-description">
-            <p>Enterprise retail client seeking an experienced IT Project Manager to lead technology initiatives from planning through delivery. PMP certification required.</p>
-            <h4>Requirements:</h4>
-            <ul>
-              <li>7+ years of IT project management experience</li>
-              <li>PMP or equivalent certification required</li>
-              <li>Experience with Agile and Waterfall methodologies</li>
-              <li>Strong stakeholder management and communication skills</li>
-              <li>Retail or e-commerce experience preferred</li>
-            </ul>
-          </div>
-          <a href="#apply" class="btn btn-primary">Apply Now</a>
-        </div>
-
+      <div class="job-listings" id="job-listings">
+        <p style="text-align: center; color: #6b7280;">Loading job listings...</p>
       </div>
     </section>
 
@@ -246,11 +121,6 @@ The Getiva Solutions Recruiting Team
         <label for="position">Position Applying For *</label>
         <select id="position" name="position" required>
           <option value="">Select a position...</option>
-          <option value="Senior Java Developer">Senior Java Developer (Remote - Contract)</option>
-          <option value="Cloud Infrastructure Engineer">Cloud Infrastructure Engineer (Kansas City - Full-Time)</option>
-          <option value="Data Analyst">Data Analyst (St. Louis - Contract-to-Hire)</option>
-          <option value="DevOps Engineer">DevOps Engineer (Remote - Contract)</option>
-          <option value="IT Project Manager">IT Project Manager (Chicago - Full-Time)</option>
           <option value="General Application">General Application - Consider me for future opportunities</option>
         </select>
 
@@ -386,5 +256,94 @@ The Getiva Solutions Recruiting Team
   </footer>
   <script src="nav.js"></script>
   <script src="motion.js"></script>
+  <script>
+    // Load jobs from JSON file
+    async function loadJobs() {
+      try {
+        const response = await fetch('/data/jobs.json');
+        const jobs = await response.json();
+        
+        const jobListings = document.getElementById('job-listings');
+        const positionSelect = document.getElementById('position');
+        
+        // Clear loading message
+        jobListings.innerHTML = '';
+        
+        // Clear existing options except first and last
+        const firstOption = positionSelect.options[0];
+        const lastOption = positionSelect.options[positionSelect.options.length - 1];
+        positionSelect.innerHTML = '';
+        positionSelect.appendChild(firstOption);
+        
+        // Filter active jobs and render
+        const activeJobs = jobs.filter(job => job.active);
+        
+        if (activeJobs.length === 0) {
+          jobListings.innerHTML = '<p style="text-align: center; color: #6b7280;">No open positions at this time. Please check back later or submit your resume for future opportunities.</p>';
+          positionSelect.appendChild(lastOption);
+          return;
+        }
+        
+        activeJobs.forEach(job => {
+          // Create job card
+          const typeLabel = job.type === 'fulltime' ? 'Full-Time' : 
+                           job.type === 'contract-to-hire' ? 'Contract-to-Hire' : 'Contract';
+          
+          const jobCard = document.createElement('div');
+          jobCard.className = 'job-card';
+          jobCard.id = 'job-' + job.id;
+          
+          jobCard.innerHTML = `
+            <div class="job-header">
+              <h3>${job.title}</h3>
+              <span class="job-type ${job.type}">${typeLabel}</span>
+            </div>
+            <div class="job-meta">
+              <span class="job-location">📍 ${job.location}</span>
+              <span class="job-duration">⏱️ ${job.duration}</span>
+              <span class="job-posted">Posted: ${job.posted}</span>
+            </div>
+            <div class="job-description">
+              <p>${job.description}</p>
+              <h4>Requirements:</h4>
+              <ul>
+                ${job.requirements.map(req => `<li>${req}</li>`).join('')}
+              </ul>
+            </div>
+            <a href="#apply" class="btn btn-primary" onclick="selectPosition('${job.title}')">Apply Now</a>
+          `;
+          
+          jobListings.appendChild(jobCard);
+          
+          // Add to dropdown
+          const option = document.createElement('option');
+          option.value = job.title;
+          option.textContent = `${job.title} (${job.location} - ${typeLabel})`;
+          positionSelect.appendChild(option);
+        });
+        
+        // Add general application option at end
+        positionSelect.appendChild(lastOption);
+        
+      } catch (error) {
+        console.error('Error loading jobs:', error);
+        document.getElementById('job-listings').innerHTML = '<p style="text-align: center; color: #dc2626;">Error loading job listings. Please refresh the page.</p>';
+      }
+    }
+    
+    // Auto-select position when clicking Apply Now
+    function selectPosition(title) {
+      const select = document.getElementById('position');
+      for (let i = 0; i < select.options.length; i++) {
+        if (select.options[i].value === title) {
+          select.selectedIndex = i;
+          break;
+        }
+      }
+    }
+    
+    // Load jobs on page load
+    document.addEventListener('DOMContentLoaded', loadJobs);
+  </script>
 </body>
 </html>

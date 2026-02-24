@@ -1,0 +1,47 @@
+backend:
+  name: github
+  repo: Kosanah/getivasolutions
+  branch: main
+  base_url: https://decap-oauth.netlify.app
+
+media_folder: "img"
+public_folder: "/img"
+
+collections:
+  - name: "jobs"
+    label: "Job Listings"
+    folder: "_jobs"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Job Title", name: "title", widget: "string" }
+      - { label: "Job ID", name: "id", widget: "string", hint: "Unique ID like 'senior-java' or 'cloud-engineer'" }
+      - label: "Job Type"
+        name: "type"
+        widget: "select"
+        options:
+          - { label: "Contract", value: "contract" }
+          - { label: "Full-Time", value: "fulltime" }
+          - { label: "Contract-to-Hire", value: "contract-to-hire" }
+      - { label: "Location", name: "location", widget: "string", hint: "e.g., 'Remote (US)' or 'Kansas City, MO (Hybrid)'" }
+      - { label: "Duration", name: "duration", widget: "string", hint: "e.g., '12+ months' or 'Permanent'" }
+      - { label: "Posted Date", name: "posted", widget: "string", default: "Feb 2026" }
+      - { label: "Description", name: "description", widget: "text" }
+      - label: "Requirements"
+        name: "requirements"
+        widget: "list"
+        field: { label: "Requirement", name: "req", widget: "string" }
+      - { label: "Active", name: "active", widget: "boolean", default: true }
+
+  - name: "settings"
+    label: "Settings"
+    files:
+      - label: "Site Settings"
+        name: "site"
+        file: "_data/settings.json"
+        fields:
+          - { label: "Company Name", name: "companyName", widget: "string", default: "Getiva Solutions" }
+          - { label: "Phone", name: "phone", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Address", name: "address", widget: "text" }
