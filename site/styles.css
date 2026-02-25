@@ -636,10 +636,44 @@ body.menu-open .nav-backdrop {
 
 /* ----- Stats section ----- */
 .stats-section {
-  background: var(--color-bg-dark);
-  padding: 72px 32px 80px;
+  background: linear-gradient(135deg, #0a1628 0%, #0f2137 50%, #1a365d 100%);
+  padding: 80px 32px;
   position: relative;
   overflow: hidden;
+}
+.stats-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(0, 166, 81, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(0, 82, 204, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.stats-header {
+  text-align: center;
+  margin-bottom: 48px;
+  position: relative;
+  z-index: 1;
+}
+.stats-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--color-accent), #00bf5c);
+  color: #fff;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+}
+.stats-title {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
 }
 
 .stats-grid {
@@ -651,6 +685,51 @@ body.menu-open .nav-backdrop {
   text-align: center;
   position: relative;
   z-index: 1;
+}
+
+.stat-card {
+  padding: 32px 24px 28px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+  backdrop-filter: blur(10px);
+}
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-accent), #00bf5c);
+  border-radius: 16px 16px 0 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.stat-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(0, 166, 81, 0.3);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+.stat-card:hover::before {
+  opacity: 1;
+}
+
+.stat-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 16px;
+  background: linear-gradient(135deg, var(--color-accent), #00bf5c);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.stat-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: #fff;
 }
 
 .stat-item {
@@ -675,19 +754,38 @@ body.menu-open .nav-backdrop {
 
 .stat-value {
   display: block;
-  font-size: 2.75rem;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 10px;
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.8) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
   line-height: 1.1;
 }
 
 .stat-label {
-  font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
   text-transform: uppercase;
   letter-spacing: 0.06em;
   font-weight: 500;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.stat-bar {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+.stat-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-accent), #00bf5c);
+  border-radius: 4px;
+  transition: width 1s ease;
 }
 
 @media (max-width: 768px) {
