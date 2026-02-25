@@ -3615,6 +3615,73 @@ body.menu-open .nav-backdrop {
   margin-bottom: 0;
 }
 
+/* About Leadership */
+.about-leadership {
+  padding: 80px 32px;
+  background: linear-gradient(135deg, #0a1628 0%, #0f2137 100%);
+  color: #fff;
+}
+
+.about-leadership .about-values-header h2 {
+  color: #fff;
+}
+
+.about-leadership .about-values-header p {
+  color: rgba(255,255,255,0.8);
+}
+
+.leadership-card {
+  max-width: 800px;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+}
+
+.leadership-info h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 8px;
+}
+
+.leadership-title {
+  font-size: 1.1rem;
+  color: var(--color-accent);
+  font-weight: 600;
+  margin: 0 0 24px;
+}
+
+.leadership-info p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.85);
+  margin: 0 0 16px;
+}
+
+.leadership-info em {
+  color: var(--color-accent);
+  font-style: italic;
+}
+
+.leadership-contact {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.leadership-contact a {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.leadership-contact a:hover {
+  text-decoration: underline;
+}
+
 /* About Values */
 .about-values {
   padding: 100px 32px;
