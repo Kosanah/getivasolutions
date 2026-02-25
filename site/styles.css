@@ -88,14 +88,7 @@ body {
 }
 
 /* ----- Header ----- */
-/* Rich UI Navbar Glassmorphism */
-.site-header.rich-navbar {
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  box-shadow: 0 8px 32px rgba(0,82,204,0.08), 0 1px 3px rgba(0,166,81,0.08);
-  border-bottom: 1.5px solid rgba(0,82,204,0.07);
-}
+.site-header {
   position: sticky;
   top: 0;
   z-index: 100;
@@ -177,17 +170,7 @@ body {
   .logo-tagline {
     display: none;
   }
-  /* Rich UI Navbar Inner */
   .site-header-inner {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 0 48px;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-  }
     padding: 0 20px;
   }
 }
@@ -206,18 +189,7 @@ body {
   .logo-text {
     display: flex;
   }
-  /* Rich UI Logo */
-  .logo.rich-logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--color-primary);
-    text-decoration: none;
-    letter-spacing: -0.02em;
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    padding: 0;
-  }
+  .logo {
     gap: 10px;
   }
   .site-header-inner {
@@ -226,15 +198,7 @@ body {
   }
 }
 
-/* Rich UI Nav List */
-.nav-list.rich-nav-list {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
+.nav-list {
   display: flex;
   align-items: center;
   gap: 2px;
@@ -275,12 +239,7 @@ body {
   transform: scaleX(1);
 }
 
-/* Rich UI Nav CTA */
-.nav-cta.rich-nav-cta {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
+.nav-cta {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -412,22 +371,7 @@ body.menu-open .nav-backdrop {
   letter-spacing: 0.01em;
 }
 
-/* Rich UI Primary Button */
-.btn-primary.rich-btn-primary {
-  background: linear-gradient(135deg, #00a651 0%, #00bf5c 100%);
-  color: #fff;
-  box-shadow: 0 2px 8px rgba(0,166,81,0.12);
-  font-size: 1rem;
-  font-weight: 700;
-  border-radius: 12px;
-  padding: 12px 32px;
-  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
-}
-.btn-primary.rich-btn-primary:hover {
-  background: linear-gradient(135deg, #008c44 0%, #00a651 100%);
-  box-shadow: 0 8px 24px rgba(0,166,81,0.18);
-  transform: translateY(-2px) scale(1.03);
-}
+.btn-primary {
   background: var(--color-accent);
   color: #fff;
   box-shadow: 0 1px 2px rgba(0, 166, 81, 0.15);
@@ -440,23 +384,7 @@ body.menu-open .nav-backdrop {
   box-shadow: 0 4px 12px rgba(0, 166, 81, 0.25);
 }
 
-/* Rich UI Secondary Button */
-.btn-secondary.rich-btn-secondary {
-  background: transparent;
-  color: #374151;
-  border: 2px solid #d1d5db;
-  font-size: 1rem;
-  font-weight: 700;
-  border-radius: 12px;
-  padding: 12px 32px;
-  transition: border-color 0.2s, color 0.2s, background 0.2s, transform 0.2s;
-}
-.btn-secondary.rich-btn-secondary:hover {
-  background: #f9fafb;
-  color: var(--color-primary);
-  border-color: var(--color-primary);
-  transform: translateY(-1px) scale(1.02);
-}
+.btn-secondary {
   background: transparent;
   color: #374151;
   border: 1.5px solid #d1d5db;
