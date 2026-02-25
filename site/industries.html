@@ -4,314 +4,293 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Industries We Serve | Getiva Solutions</title>
-  <meta name="description" content="Getiva Solutions provides IT staffing and consulting for Financial Services, Healthcare, Technology, Government, and Manufacturing sectors.">
+  <meta name="description" content="Getiva Solutions provides IT staffing and consulting across 18+ industries including Financial Services, Healthcare, Technology, Government, and more.">
   <meta name="keywords" content="IT staffing industries, financial services IT, healthcare IT staffing, government IT contractors, manufacturing IT solutions">
   <meta property="og:title" content="Industries We Serve | Getiva Solutions">
-  <meta property="og:description" content="Expert IT staffing and consulting across Financial Services, Healthcare, Technology, Government, and Manufacturing industries.">
+  <meta property="og:description" content="Expert IT staffing and consulting across 18+ industries.">
   <meta property="og:type" content="website">
   <link rel="icon" href="img/logo.png" type="image/png">
   <link rel="canonical" href="https://getivasolutions.com/industries.html">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="motion.css">
   <style>
-    /* Rich UI Styles for Industries Page */
+    /* Clean Compact Industries Page */
     .industries-hero {
       background: linear-gradient(135deg, #0a1628 0%, #0f2137 50%, #1a365d 100%);
       color: #fff;
-      padding: 80px 32px;
+      padding: 100px 32px 80px;
       text-align: center;
       position: relative;
       overflow: hidden;
     }
+    
     .industries-hero::before {
       content: '';
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&q=80') center/cover;
-      opacity: 0.12;
+      background: 
+        radial-gradient(ellipse 60% 40% at 30% 20%, rgba(0, 166, 81, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse 50% 30% at 70% 80%, rgba(0, 82, 204, 0.08) 0%, transparent 50%);
     }
+    
     .industries-hero-content {
       position: relative;
       z-index: 1;
-      max-width: 800px;
+      max-width: 700px;
       margin: 0 auto;
     }
-    .industries-hero h1 {
-      font-size: clamp(2rem, 5vw, 3rem);
-      font-weight: 800;
-      margin: 0 0 16px;
-      animation: fadeInUp 0.6s ease;
+    
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0, 166, 81, 0.15);
+      border: 1px solid rgba(0, 166, 81, 0.3);
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #00d672;
+      margin-bottom: 24px;
     }
+    
+    .industries-hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      margin: 0 0 20px;
+      line-height: 1.15;
+    }
+    
     .industries-hero .lead {
       font-size: 1.15rem;
-      opacity: 0.9;
+      opacity: 0.85;
       margin: 0;
-      animation: fadeInUp 0.6s ease 0.1s both;
+      line-height: 1.7;
     }
-    
-    /* Industries Grid */
+
+    /* Industries Grid Section */
     .industries-section {
-      padding: 80px 32px;
+      padding: 80px 24px;
       background: #f8fafc;
     }
-    .industries-intro {
+    
+    .industries-container {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    
+    .section-header {
       text-align: center;
-      max-width: 700px;
-      margin: 0 auto 60px;
+      margin-bottom: 56px;
     }
-    .industries-intro .section-label {
-      color: var(--color-accent);
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      font-size: 0.85rem;
-      display: block;
-      margin-bottom: 12px;
-    }
-    .industries-intro h2 {
+    
+    .section-header h2 {
       font-size: 2rem;
       font-weight: 700;
-      color: #1a1a2e;
-      margin: 0 0 16px;
+      color: #0a1a2e;
+      margin: 0 0 12px;
     }
-    .industries-intro p {
-      color: #64748b;
+    
+    .section-header p {
       font-size: 1.05rem;
-      line-height: 1.7;
-    }
-    
-    /* Industry Cards */
-    .industry-card-large {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-      background: #fff;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 8px 40px rgba(0,0,0,0.08);
-      margin-bottom: 32px;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.6s ease;
-    }
-    .industry-card-large.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .industry-card-large:nth-child(even) {
-      direction: rtl;
-    }
-    .industry-card-large:nth-child(even) > * {
-      direction: ltr;
-    }
-    .industry-card-large:hover {
-      box-shadow: 0 16px 60px rgba(0,0,0,0.12);
-    }
-    .industry-image {
-      height: 100%;
-      min-height: 320px;
-      background-size: cover;
-      background-position: center;
-      position: relative;
-    }
-    .industry-image::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(0,166,81,0.2) 0%, rgba(0,71,171,0.2) 100%);
-    }
-    .industry-content {
-      padding: 48px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    .industry-icon {
-      width: 64px;
-      height: 64px;
-      background: linear-gradient(135deg, var(--color-accent) 0%, #00bf5c 100%);
-      border-radius: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 24px;
-      color: #fff;
-    }
-    .industry-content h3 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #1a1a2e;
-      margin: 0 0 16px;
-    }
-    .industry-content p {
-      font-size: 1rem;
       color: #64748b;
-      line-height: 1.7;
-      margin: 0 0 20px;
-    }
-    .industry-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: auto;
-    }
-    .industry-tag {
-      background: #f1f5f9;
-      color: #475569;
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: 500;
-    }
-    
-    /* Stats Section */
-    .stats-section {
-      padding: 80px 32px;
-      background: linear-gradient(135deg, #0a1628 0%, #0f2137 100%);
-      color: #fff;
-    }
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 40px;
-      max-width: 1000px;
+      max-width: 600px;
       margin: 0 auto;
-      text-align: center;
     }
-    .stat-item {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.5s ease;
-    }
-    .stat-item.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .stat-value {
-      font-size: 3rem;
-      font-weight: 800;
-      color: var(--color-accent);
-      display: block;
-      line-height: 1;
-    }
-    .stat-label {
-      font-size: 1rem;
-      opacity: 0.85;
-      margin-top: 8px;
-      display: block;
+
+    /* Compact Industry Cards Grid */
+    .industries-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
     }
     
-    /* Why Choose Section */
-    .why-section {
-      padding: 80px 32px;
+    .industry-card {
       background: #fff;
-    }
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 32px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .why-card {
-      background: #f8fafc;
       border-radius: 16px;
-      padding: 32px;
+      padding: 28px;
       border: 1px solid #e5e7eb;
       transition: all 0.3s ease;
-      opacity: 0;
-      transform: translateY(20px);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
     }
-    .why-card.visible {
-      opacity: 1;
-      transform: translateY(0);
+    
+    .industry-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #0052cc, #00a651);
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
     }
-    .why-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.1);
-      border-color: var(--color-accent);
+    
+    .industry-card:hover::before {
+      transform: scaleX(1);
     }
-    .why-icon {
-      width: 56px;
-      height: 56px;
-      background: linear-gradient(135deg, var(--color-accent) 0%, #00bf5c 100%);
+    
+    .industry-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 48px rgba(0, 82, 204, 0.12);
+      border-color: transparent;
+    }
+    
+    .industry-card-icon {
+      width: 52px;
+      height: 52px;
       border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 20px;
-      color: #fff;
-    }
-    .why-card h3 {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: #1a1a2e;
-      margin: 0 0 12px;
-    }
-    .why-card p {
-      font-size: 0.95rem;
-      color: #64748b;
-      line-height: 1.6;
-      margin: 0;
+      margin-bottom: 18px;
+      position: relative;
     }
     
-    /* CTA Section */
-    .industries-cta {
-      padding: 80px 32px;
-      background: #f8fafc;
-      text-align: center;
+    .industry-card-icon svg {
+      width: 26px;
+      height: 26px;
+      stroke: #fff;
+      position: relative;
+      z-index: 1;
     }
-    .cta-card {
-      max-width: 700px;
-      margin: 0 auto;
-      background: #fff;
-      border-radius: 24px;
-      padding: 48px;
-      box-shadow: 0 8px 40px rgba(0,0,0,0.08);
-    }
-    .cta-card h2 {
-      font-size: 2rem;
+    
+    /* Icon color variations */
+    .industry-card:nth-child(6n+1) .industry-card-icon { background: linear-gradient(135deg, #0052cc 0%, #2d7dd2 100%); }
+    .industry-card:nth-child(6n+2) .industry-card-icon { background: linear-gradient(135deg, #00a651 0%, #00d672 100%); }
+    .industry-card:nth-child(6n+3) .industry-card-icon { background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); }
+    .industry-card:nth-child(6n+4) .industry-card-icon { background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%); }
+    .industry-card:nth-child(6n+5) .industry-card-icon { background: linear-gradient(135deg, #ec4899 0%, #f472b6 100%); }
+    .industry-card:nth-child(6n+6) .industry-card-icon { background: linear-gradient(135deg, #14b8a6 0%, #2dd4bf 100%); }
+    
+    .industry-card h3 {
+      font-size: 1.15rem;
       font-weight: 700;
-      color: #1a1a2e;
+      color: #0a1a2e;
+      margin: 0 0 10px;
+    }
+    
+    .industry-card p {
+      font-size: 0.9rem;
+      color: #64748b;
+      line-height: 1.6;
       margin: 0 0 16px;
     }
-    .cta-card p {
+    
+    .industry-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    
+    .industry-tag {
+      background: #f1f5f9;
+      color: #475569;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    /* Stats Banner */
+    .stats-banner {
+      background: linear-gradient(135deg, #0a1628 0%, #162d4a 100%);
+      padding: 60px 24px;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .stat-item {
+      color: #fff;
+    }
+    
+    .stat-value {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #00d672;
+      display: block;
+    }
+    
+    .stat-label {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      margin-top: 4px;
+      display: block;
+    }
+    
+    @media (max-width: 768px) {
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .stats-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .stat-value {
+        font-size: 2rem;
+      }
+    }
+
+    /* CTA Section */
+    .industries-cta {
+      padding: 80px 24px;
+      background: #fff;
+      text-align: center;
+    }
+    
+    .cta-content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .cta-content h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #0a1a2e;
+      margin: 0 0 16px;
+    }
+    
+    .cta-content p {
       font-size: 1.1rem;
       color: #64748b;
       margin: 0 0 32px;
     }
+    
     .cta-buttons {
       display: flex;
       gap: 16px;
       justify-content: center;
       flex-wrap: wrap;
     }
+    
     .cta-buttons .btn {
-      padding: 16px 32px;
+      padding: 14px 32px;
       font-size: 1rem;
+      border-radius: 10px;
+    }
+
+    /* Animation */
+    .industry-card {
+      opacity: 0;
+      transform: translateY(20px);
     }
     
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    
-    @media (max-width: 768px) {
-      .industry-card-large {
-        grid-template-columns: 1fr;
-      }
-      .industry-card-large:nth-child(even) {
-        direction: ltr;
-      }
-      .industry-image {
-        min-height: 200px;
-      }
-      .industry-content {
-        padding: 32px 24px;
-      }
-      .cta-card {
-        padding: 32px 24px;
-      }
+    .industry-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.5s ease, transform 0.5s ease;
     }
   </style>
 </head>
@@ -354,537 +333,353 @@
     <!-- Hero Section -->
     <section class="industries-hero">
       <div class="industries-hero-content">
+        <div class="hero-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+          </svg>
+          18+ Industries Served
+        </div>
         <h1>Industries We Serve</h1>
-        <p class="lead">Specialized IT staffing and consulting solutions for enterprise organizations across key industries. We understand the unique challenges and compliance requirements of each sector.</p>
+        <p class="lead">Specialized IT staffing solutions tailored to the unique needs of each industry sector.</p>
       </div>
     </section>
 
-    <!-- Industries Section -->
+    <!-- Industries Grid -->
     <section class="industries-section">
-      <div class="container">
-        <div class="industries-intro">
-          <span class="section-label">Sector Expertise</span>
-          <h2>Deep Industry Knowledge</h2>
-          <p>Our recruiters and account managers specialize in specific industries, ensuring we understand your technical requirements, compliance needs, and business context.</p>
+      <div class="industries-container">
+        <div class="section-header">
+          <h2>Sector Expertise</h2>
+          <p>Deep domain knowledge across key industries with compliance-ready talent.</p>
         </div>
         
-        <div class="industries-grid" style="max-width: 1200px; margin: 0 auto;">
+        <div class="industries-grid">
           <!-- Financial Services -->
-          <article class="industry-card-large" id="financial-services">
-            <div class="industry-image" style="background-image: url('https://images.unsplash.com/photo-1560472355-536de3962603?w=800&q=80');"></div>
-            <div class="industry-content">
-              <div class="industry-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-                </svg>
-              </div>
-              <h3>Financial Services</h3>
-              <p>Banks, fintech firms, and insurance companies trust Getiva for mission-critical roles that require deep domain expertise and strict regulatory compliance. We provide talent familiar with SOX, PCI-DSS, and financial system architectures.</p>
-              <div class="industry-tags">
-                <span class="industry-tag">Banking Systems</span>
-                <span class="industry-tag">Trading Platforms</span>
-                <span class="industry-tag">Risk & Compliance</span>
-                <span class="industry-tag">FinTech</span>
-              </div>
+          <div class="industry-card" id="financial">
+            <div class="industry-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              </svg>
             </div>
-          </article>
+            <h3>Financial Services</h3>
+            <p>Banks, fintech, and insurance with SOX & PCI-DSS compliance expertise.</p>
+            <div class="industry-tags">
+              <span class="industry-tag">Banking</span>
+              <span class="industry-tag">FinTech</span>
+              <span class="industry-tag">Trading</span>
+            </div>
+          </div>
 
           <!-- Healthcare -->
-          <article class="industry-card-large" id="healthcare">
-            <div class="industry-image" style="background-image: url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800&q=80');"></div>
-            <div class="industry-content">
-              <div class="industry-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-                </svg>
-              </div>
-              <h3>Healthcare</h3>
-              <p>Healthcare organizations rely on Getiva for professionals who understand clinical workflows, interoperability challenges, and HIPAA-compliant data handling. We staff EHR implementations, clinical analytics, and health IT operations.</p>
-              <div class="industry-tags">
-                <span class="industry-tag">EHR/EMR Systems</span>
-                <span class="industry-tag">HIPAA Compliance</span>
-                <span class="industry-tag">Clinical Analytics</span>
-                <span class="industry-tag">Telehealth</span>
-              </div>
+          <div class="industry-card" id="healthcare">
+            <div class="industry-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+              </svg>
             </div>
-          </article>
+            <h3>Healthcare</h3>
+            <p>EHR, clinical systems, and HIPAA-compliant health IT solutions.</p>
+            <div class="industry-tags">
+              <span class="industry-tag">EHR/EMR</span>
+              <span class="industry-tag">HIPAA</span>
+              <span class="industry-tag">Telehealth</span>
+            </div>
+          </div>
 
           <!-- Technology -->
-          <article class="industry-card-large" id="technology">
-            <div class="industry-image" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80');"></div>
-            <div class="industry-content">
-              <div class="industry-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
-                </svg>
-              </div>
-              <h3>Technology</h3>
-              <p>From startups to established tech firms, we staff engineering, product, and infrastructure roles that require current skills and rapid onboarding. Our network includes cloud architects, DevOps engineers, and full-stack developers.</p>
-              <div class="industry-tags">
-                <span class="industry-tag">Cloud & DevOps</span>
-                <span class="industry-tag">Software Engineering</span>
-                <span class="industry-tag">Data & AI/ML</span>
-                <span class="industry-tag">Cybersecurity</span>
-              </div>
+          <div class="industry-card" id="technology">
+            <div class="industry-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+              </svg>
             </div>
-          </article>
+            <h3>Technology</h3>
+            <p>Cloud, DevOps, AI/ML, and full-stack engineering talent.</p>
+            <div class="industry-tags">
+              <span class="industry-tag">Cloud</span>
+              <span class="industry-tag">DevOps</span>
+              <span class="industry-tag">AI/ML</span>
+            </div>
+          </div>
 
           <!-- Government -->
-          <article class="industry-card-large" id="government">
-            <div class="industry-image" style="background-image: url('https://images.unsplash.com/photo-1523293182086-7651a899d37f?w=800&q=80');"></div>
-            <div class="industry-content">
-              <div class="industry-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                </svg>
-              </div>
-              <h3>Government</h3>
-              <p>Public sector agencies depend on Getiva for cleared and clearance-eligible professionals experienced with federal compliance frameworks like FISMA, FedRAMP, and NIST. We understand procurement timelines and agency requirements.</p>
-              <div class="industry-tags">
-                <span class="industry-tag">Federal Contracts</span>
-                <span class="industry-tag">Security Clearance</span>
-                <span class="industry-tag">FISMA/FedRAMP</span>
-                <span class="industry-tag">State & Local</span>
-              </div>
+          <div class="industry-card" id="government">
+            <div class="industry-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
             </div>
-          </article>
+            <h3>Government</h3>
+            <p>Cleared professionals for federal, state, and local agencies.</p>
+            <div class="industry-tags">
+              <span class="industry-tag">FedRAMP</span>
+              <span class="industry-tag">Clearance</span>
+              <span class="industry-tag">FISMA</span>
+            </div>
+          </div>
 
           <!-- Manufacturing -->
-          <article class="industry-card-large" id="manufacturing">
-            <div class="industry-image" style="background-image: url('https://images.unsplash.com/photo-1565043666747-69f6646db940?w=800&q=80');"></div>
-            <div class="industry-content">
-              <div class="industry-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M2 20h20"/><path d="M5 20V8l7-5 7 5v12"/><path d="M9 20v-6h6v6"/>
-                </svg>
-              </div>
-              <h3>Manufacturing</h3>
-              <p>Manufacturing companies look to Getiva for IT talent who can bridge operational technology and enterprise systems. We staff ERP implementations, supply chain IT, and industrial IoT initiatives.</p>
-              <div class="industry-tags">
-                <span class="industry-tag">ERP Systems</span>
-                <span class="industry-tag">Supply Chain IT</span>
-                <span class="industry-tag">Industrial IoT</span>
-                <span class="industry-tag">MES Integration</span>
-              </div>
+          <div class="industry-card" id="manufacturing">
+            <div class="industry-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M2 20h20"/><path d="M5 20V8l7-5 7 5v12"/><path d="M9 20v-6h6v6"/>
+              </svg>
             </div>
-          </article>
+            <h3>Manufacturing</h3>
+            <p>ERP, supply chain IT, and industrial IoT specialists.</p>
+            <div class="industry-tags">
+              <span class="industry-tag">ERP</span>
+              <span class="industry-tag">IoT</span>
+              <span class="industry-tag">MES</span>
+            </div>
+          </div>
 
           <!-- Retail & E-Commerce -->
-          <article class="industry-card-large" id="retail">
-            <div class="industry-image" style="background-image: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80');"></div>
-            <div class="industry-content">
-              <div class="industry-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
-                </svg>
-              </div>
-              <h3>Retail & E-Commerce</h3>
-              <p>We help retailers and e-commerce platforms build seamless digital experiences. Our talent specializes in POS systems, inventory management, omnichannel solutions, and customer analytics platforms.</p>
-              <div class="industry-tags">
-                <span class="industry-tag">E-Commerce Platforms</span>
-                <span class="industry-tag">POS Systems</span>
-                <span class="industry-tag">Inventory Management</span>
-                <span class="industry-tag">Customer Analytics</span>
-              </div>
+          <div class="industry-card" id="retail">
+            <div class="industry-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+              </svg>
             </div>
-          </article>
+            <h3>Retail & E-Commerce</h3>
+            <p>POS systems, omnichannel, and customer analytics platforms.</p>
+            <div class="industry-tags">
+              <span class="industry-tag">E-Commerce</span>
+              <span class="industry-tag">POS</span>
+              <span class="industry-tag">Analytics</span>
+            </div>
+          </div>
 
           <!-- Telecommunications -->
-          <article class="industry-card-large" id="telecom">
-            <div class="industry-image" style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80');"></div>
-            <div class="industry-content">
-              <div class="industry-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-                </svg>
-              </div>
-              <h3>Telecommunications</h3>
-              <p>Telecom providers rely on Getiva for network engineers, 5G specialists, and OSS/BSS experts. We understand the 24/7 nature of telecom operations and compliance with FCC regulations.</p>
-              <div class="industry-tags">
-                <span class="industry-tag">5G Networks</span>
-                <span class="industry-tag">OSS/BSS Systems</span>
-                <span class="industry-tag">Network Engineering</span>
-                <span class="industry-tag">VoIP & UC</span>
-              </div>
+          <div class="industry-card" id="telecom">
+            <div class="industry-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
             </div>
-          </article>
+            <h3>Telecommunications</h3>
+            <p>5G networks, OSS/BSS systems, and VoIP solutions.</p>
+            <div class="industry-tags">
+              <span class="industry-tag">5G</span>
+              <span class="industry-tag">OSS/BSS</span>
+              <span class="industry-tag">VoIP</span>
+            </div>
+          </div>
 
           <!-- Energy & Utilities -->
-          <article class="industry-card-large" id="energy">
-            <div class="industry-image" style="background-image: url('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&q=80');"></div>
-            <div class="industry-content">
-              <div class="industry-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-                </svg>
-              </div>
-              <h3>Energy & Utilities</h3>
-              <p>From smart grid implementations to SCADA systems, we provide IT talent for power generation, oil & gas, and renewable energy companies. Our professionals understand NERC CIP compliance and critical infrastructure protection.</p>
-              <div class="industry-tags">
-                <span class="industry-tag">Smart Grid</span>
-                <span class="industry-tag">SCADA Systems</span>
-                <span class="industry-tag">NERC CIP</span>
-                <span class="industry-tag">Renewable Energy</span>
-              </div>
+          <div class="industry-card" id="energy">
+            <div class="industry-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+              </svg>
             </div>
-          </article>
+            <h3>Energy & Utilities</h3>
+            <p>Smart grid, SCADA, and NERC CIP compliance experts.</p>
+            <div class="industry-tags">
+              <span class="industry-tag">Smart Grid</span>
+              <span class="industry-tag">SCADA</span>
+              <span class="industry-tag">Renewables</span>
+            </div>
+          </div>
 
-          <!-- Education & EdTech -->
-          <article class="industry-card-large" id="education">
-            <div class="industry-image" style="background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80');"></div>
-            <div class="industry-content">
-              <div class="industry-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
-                </svg>
-              </div>
-              <h3>Education & EdTech</h3>
-              <p>Universities, K-12 districts, and EdTech companies trust Getiva for LMS administrators, student information system experts, and educational software developers. We understand FERPA compliance.</p>
-              <div class="industry-tags">
-                <span class="industry-tag">LMS Platforms</span>
-                <span class="industry-tag">Student Systems</span>
-                <span class="industry-tag">EdTech Development</span>
-                <span class="industry-tag">FERPA Compliance</span>
-              </div>
+          <!-- Education -->
+          <div class="industry-card" id="education">
+            <div class="industry-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
+              </svg>
             </div>
-          </article>
+            <h3>Education & EdTech</h3>
+            <p>LMS platforms, student systems, and FERPA compliance.</p>
+            <div class="industry-tags">
+              <span class="industry-tag">LMS</span>
+              <span class="industry-tag">EdTech</span>
+              <span class="industry-tag">FERPA</span>
+            </div>
+          </div>
 
           <!-- Insurance -->
-          <article class="industry-card-large" id="insurance">
-            <div class="industry-image" style="background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80');"></div>
-            <div class="industry-content">
-              <div class="industry-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v4"/><path d="M12 16h.01"/>
-                </svg>
-              </div>
-              <h3>Insurance</h3>
-              <p>Insurance carriers and InsurTech startups rely on Getiva for actuarial system developers, claims processing experts, and policy administration specialists familiar with industry regulations.</p>
-              <div class="industry-tags">
-                <span class="industry-tag">Claims Systems</span>
-                <span class="industry-tag">Policy Admin</span>
-                <span class="industry-tag">InsurTech</span>
-                <span class="industry-tag">Underwriting Systems</span>
-              </div>
+          <div class="industry-card" id="insurance">
+            <div class="industry-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v4"/><path d="M12 16h.01"/>
+              </svg>
             </div>
-          </article>
+            <h3>Insurance</h3>
+            <p>Claims systems, policy admin, and InsurTech platforms.</p>
+            <div class="industry-tags">
+              <span class="industry-tag">Claims</span>
+              <span class="industry-tag">InsurTech</span>
+              <span class="industry-tag">Underwriting</span>
+            </div>
+          </div>
 
           <!-- Media & Entertainment -->
-          <article class="industry-card-large" id="media">
-            <div class="industry-image" style="background-image: url('https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=800&q=80');"></div>
-            <div class="industry-content">
-              <div class="industry-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/>
-                </svg>
-              </div>
-              <h3>Media & Entertainment</h3>
-              <p>Streaming platforms, broadcasting companies, and gaming studios count on Getiva for content delivery experts, video engineering talent, and digital media developers who understand high-scale systems.</p>
-              <div class="industry-tags">
-                <span class="industry-tag">Streaming Platforms</span>
-                <span class="industry-tag">Content Delivery</span>
-                <span class="industry-tag">Video Engineering</span>
-                <span class="industry-tag">Gaming Development</span>
-              </div>
+          <div class="industry-card" id="media">
+            <div class="industry-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/>
+              </svg>
             </div>
-          </article>
+            <h3>Media & Entertainment</h3>
+            <p>Streaming platforms, video engineering, and CDN specialists.</p>
+            <div class="industry-tags">
+              <span class="industry-tag">Streaming</span>
+              <span class="industry-tag">Gaming</span>
+              <span class="industry-tag">CDN</span>
+            </div>
+          </div>
 
           <!-- Transportation & Logistics -->
-          <article class="industry-card-large" id="logistics">
-            <div class="industry-image" style="background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80');"></div>
-            <div class="industry-content">
-              <div class="industry-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
-                </svg>
-              </div>
-              <h3>Transportation & Logistics</h3>
-              <p>Airlines, shipping companies, and logistics providers depend on Getiva for fleet management systems, route optimization, and warehouse automation expertise. We understand DOT compliance requirements.</p>
-              <div class="industry-tags">
-                <span class="industry-tag">Fleet Management</span>
-                <span class="industry-tag">Route Optimization</span>
-                <span class="industry-tag">Warehouse Automation</span>
-                <span class="industry-tag">TMS/WMS Systems</span>
-              </div>
+          <div class="industry-card" id="logistics">
+            <div class="industry-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+              </svg>
             </div>
-          </article>
+            <h3>Transportation & Logistics</h3>
+            <p>Fleet management, TMS/WMS, and route optimization.</p>
+            <div class="industry-tags">
+              <span class="industry-tag">Fleet</span>
+              <span class="industry-tag">TMS</span>
+              <span class="industry-tag">WMS</span>
+            </div>
+          </div>
 
-          <!-- Real Estate & PropTech -->
-          <article class="industry-card-large" id="realestate">
-            <div class="industry-image" style="background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80');"></div>
-            <div class="industry-content">
-              <div class="industry-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
-                </svg>
-              </div>
-              <h3>Real Estate & PropTech</h3>
-              <p>Real estate firms and PropTech startups rely on Getiva for property management system developers, MLS integration specialists, and smart building technology experts.</p>
-              <div class="industry-tags">
-                <span class="industry-tag">Property Management</span>
-                <span class="industry-tag">MLS Integration</span>
-                <span class="industry-tag">Smart Buildings</span>
-                <span class="industry-tag">PropTech Platforms</span>
-              </div>
+          <!-- Real Estate -->
+          <div class="industry-card" id="realestate">
+            <div class="industry-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+              </svg>
             </div>
-          </article>
+            <h3>Real Estate & PropTech</h3>
+            <p>Property management, MLS integration, and smart buildings.</p>
+            <div class="industry-tags">
+              <span class="industry-tag">PropTech</span>
+              <span class="industry-tag">MLS</span>
+              <span class="industry-tag">Smart Buildings</span>
+            </div>
+          </div>
 
           <!-- Aerospace & Defense -->
-          <article class="industry-card-large" id="aerospace">
-            <div class="industry-image" style="background-image: url('https://images.unsplash.com/photo-1517976487492-5750f3195933?w=800&q=80');"></div>
-            <div class="industry-content">
-              <div class="industry-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M22 2L11 13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
-                </svg>
-              </div>
-              <h3>Aerospace & Defense</h3>
-              <p>Defense contractors and aerospace companies trust Getiva for cleared professionals with expertise in embedded systems, avionics software, and ITAR-compliant development practices.</p>
-              <div class="industry-tags">
-                <span class="industry-tag">Embedded Systems</span>
-                <span class="industry-tag">Avionics Software</span>
-                <span class="industry-tag">ITAR Compliance</span>
-                <span class="industry-tag">Defense Contracts</span>
-              </div>
+          <div class="industry-card" id="aerospace">
+            <div class="industry-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 2L11 13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+              </svg>
             </div>
-          </article>
+            <h3>Aerospace & Defense</h3>
+            <p>Cleared professionals, embedded systems, and ITAR compliance.</p>
+            <div class="industry-tags">
+              <span class="industry-tag">Cleared</span>
+              <span class="industry-tag">ITAR</span>
+              <span class="industry-tag">Avionics</span>
+            </div>
+          </div>
 
           <!-- Automotive -->
-          <article class="industry-card-large" id="automotive">
-            <div class="industry-image" style="background-image: url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&q=80');"></div>
-            <div class="industry-content">
-              <div class="industry-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.7-3.6a1 1 0 0 0-.8-.4H5.24a2 2 0 0 0-1.8 1.1l-.8 1.63A6 6 0 0 0 2 12.42V16h2"/><circle cx="6.5" cy="16.5" r="2.5"/><circle cx="16.5" cy="16.5" r="2.5"/>
-                </svg>
-              </div>
-              <h3>Automotive</h3>
-              <p>OEMs and automotive suppliers rely on Getiva for connected vehicle developers, ADAS engineers, and automotive software specialists familiar with ISO 26262 functional safety standards.</p>
-              <div class="industry-tags">
-                <span class="industry-tag">Connected Vehicles</span>
-                <span class="industry-tag">ADAS Systems</span>
-                <span class="industry-tag">EV Technology</span>
-                <span class="industry-tag">ISO 26262</span>
-              </div>
+          <div class="industry-card" id="automotive">
+            <div class="industry-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.7-3.6a1 1 0 0 0-.8-.4H5.24a2 2 0 0 0-1.8 1.1l-.8 1.63A6 6 0 0 0 2 12.42V16h2"/><circle cx="6.5" cy="16.5" r="2.5"/><circle cx="16.5" cy="16.5" r="2.5"/>
+              </svg>
             </div>
-          </article>
+            <h3>Automotive</h3>
+            <p>Connected vehicles, ADAS systems, and EV technology.</p>
+            <div class="industry-tags">
+              <span class="industry-tag">ADAS</span>
+              <span class="industry-tag">EV</span>
+              <span class="industry-tag">Connected</span>
+            </div>
+          </div>
 
-          <!-- Pharmaceuticals & Life Sciences -->
-          <article class="industry-card-large" id="pharma">
-            <div class="industry-image" style="background-image: url('https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=800&q=80');"></div>
-            <div class="industry-content">
-              <div class="industry-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M10.5 20.5L3.5 13.5C2 12 2 9.5 3.5 8l6-6C11 .5 13.5.5 15 2l7 7c1.5 1.5 1.5 4 0 5.5l-6 6c-1.5 1.5-4 1.5-5.5 0z"/><path d="M8.5 8.5l7 7"/><path d="M5 15l7 7"/>
-                </svg>
-              </div>
-              <h3>Pharmaceuticals & Life Sciences</h3>
-              <p>Pharma companies and biotech firms trust Getiva for LIMS specialists, clinical trial system developers, and FDA 21 CFR Part 11 compliance experts in validated environments.</p>
-              <div class="industry-tags">
-                <span class="industry-tag">LIMS Systems</span>
-                <span class="industry-tag">Clinical Trials</span>
-                <span class="industry-tag">FDA Compliance</span>
-                <span class="industry-tag">Drug Discovery IT</span>
-              </div>
+          <!-- Pharmaceuticals -->
+          <div class="industry-card" id="pharma">
+            <div class="industry-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M10.5 20.5L3.5 13.5C2 12 2 9.5 3.5 8l6-6C11 .5 13.5.5 15 2l7 7c1.5 1.5 1.5 4 0 5.5l-6 6c-1.5 1.5-4 1.5-5.5 0z"/><path d="M8.5 8.5l7 7"/>
+              </svg>
             </div>
-          </article>
+            <h3>Pharmaceuticals</h3>
+            <p>LIMS, clinical trials, and FDA 21 CFR Part 11 compliance.</p>
+            <div class="industry-tags">
+              <span class="industry-tag">LIMS</span>
+              <span class="industry-tag">Clinical</span>
+              <span class="industry-tag">FDA</span>
+            </div>
+          </div>
 
-          <!-- Legal & LegalTech -->
-          <article class="industry-card-large" id="legal">
-            <div class="industry-image" style="background-image: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&q=80');"></div>
-            <div class="industry-content">
-              <div class="industry-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/><path d="M16.24 7.76l1.42-1.42"/><path d="M18.36 11.64l2-.35"/><path d="M17.64 16.36l1.42 1.42"/><path d="M12 18v2"/>
-                </svg>
-              </div>
-              <h3>Legal & LegalTech</h3>
-              <p>Law firms and LegalTech companies rely on Getiva for e-discovery specialists, contract management developers, and legal document automation experts who understand attorney-client privilege.</p>
-              <div class="industry-tags">
-                <span class="industry-tag">E-Discovery</span>
-                <span class="industry-tag">Contract Management</span>
-                <span class="industry-tag">Document Automation</span>
-                <span class="industry-tag">Practice Management</span>
-              </div>
+          <!-- Legal -->
+          <div class="industry-card" id="legal">
+            <div class="industry-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+              </svg>
             </div>
-          </article>
+            <h3>Legal & LegalTech</h3>
+            <p>E-discovery, contract management, and document automation.</p>
+            <div class="industry-tags">
+              <span class="industry-tag">E-Discovery</span>
+              <span class="industry-tag">Contracts</span>
+              <span class="industry-tag">Automation</span>
+            </div>
+          </div>
 
-          <!-- Hospitality & Travel -->
-          <article class="industry-card-large" id="hospitality">
-            <div class="industry-image" style="background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80');"></div>
-            <div class="industry-content">
-              <div class="industry-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2z"/><path d="M16 3v4a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1V3"/><path d="M12 11v6"/>
-                </svg>
-              </div>
-              <h3>Hospitality & Travel</h3>
-              <p>Hotels, airlines, and travel agencies trust Getiva for reservation system experts, loyalty program developers, and revenue management specialists who understand GDS integration.</p>
-              <div class="industry-tags">
-                <span class="industry-tag">Reservation Systems</span>
-                <span class="industry-tag">GDS Integration</span>
-                <span class="industry-tag">Revenue Management</span>
-                <span class="industry-tag">Loyalty Programs</span>
-              </div>
+          <!-- Hospitality -->
+          <div class="industry-card" id="hospitality">
+            <div class="industry-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2z"/><path d="M16 3v4a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1V3"/><path d="M12 11v6"/>
+              </svg>
             </div>
-          </article>
-
-          <!-- Agriculture & AgTech -->
-          <article class="industry-card-large" id="agriculture">
-            <div class="industry-image" style="background-image: url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80');"></div>
-            <div class="industry-content">
-              <div class="industry-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/><path d="M8.5 8.5v.01"/><path d="M16 15.5v.01"/><path d="M12 12v.01"/><path d="M11 17v.01"/><path d="M7 14v.01"/>
-                </svg>
-              </div>
-              <h3>Agriculture & AgTech</h3>
-              <p>Agricultural enterprises and AgTech startups rely on Getiva for precision farming software developers, IoT sensor specialists, and farm management system experts.</p>
-              <div class="industry-tags">
-                <span class="industry-tag">Precision Farming</span>
-                <span class="industry-tag">Farm Management</span>
-                <span class="industry-tag">Agricultural IoT</span>
-                <span class="industry-tag">Supply Chain</span>
-              </div>
+            <h3>Hospitality & Travel</h3>
+            <p>Reservation systems, GDS integration, and revenue management.</p>
+            <div class="industry-tags">
+              <span class="industry-tag">GDS</span>
+              <span class="industry-tag">Revenue</span>
+              <span class="industry-tag">Loyalty</span>
             </div>
-          </article>
-
-          <!-- Non-Profit & NGO -->
-          <article class="industry-card-large" id="nonprofit">
-            <div class="industry-image" style="background-image: url('https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&q=80');"></div>
-            <div class="industry-content">
-              <div class="industry-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                </svg>
-              </div>
-              <h3>Non-Profit & NGO</h3>
-              <p>Non-profit organizations and NGOs trust Getiva for donor management system experts, grant tracking specialists, and mission-driven technologists who understand budget constraints.</p>
-              <div class="industry-tags">
-                <span class="industry-tag">Donor Management</span>
-                <span class="industry-tag">Grant Tracking</span>
-                <span class="industry-tag">CRM Systems</span>
-                <span class="industry-tag">Impact Reporting</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Construction & Engineering -->
-          <article class="industry-card-large" id="construction">
-            <div class="industry-image" style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80');"></div>
-            <div class="industry-content">
-              <div class="industry-icon">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <rect x="2" y="6" width="20" height="8" rx="1"/><path d="M17 14v7"/><path d="M7 14v7"/><path d="M17 3v3"/><path d="M7 3v3"/><path d="M10 14v7"/><path d="M14 14v7"/>
-                </svg>
-              </div>
-              <h3>Construction & Engineering</h3>
-              <p>Construction firms and engineering companies rely on Getiva for BIM specialists, project management system experts, and CAD software developers who understand construction workflows.</p>
-              <div class="industry-tags">
-                <span class="industry-tag">BIM Software</span>
-                <span class="industry-tag">Project Management</span>
-                <span class="industry-tag">CAD/CAM Systems</span>
-                <span class="industry-tag">Field Tech</span>
-              </div>
-            </div>
-          </article>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats-section">
+    <!-- Stats Banner -->
+    <section class="stats-banner">
       <div class="stats-grid">
         <div class="stat-item">
-          <span class="stat-value" data-count="18">18</span>
-          <span class="stat-label">Industry Verticals</span>
+          <span class="stat-value">18+</span>
+          <span class="stat-label">Industries</span>
         </div>
         <div class="stat-item">
           <span class="stat-value">500+</span>
-          <span class="stat-label">Enterprise Clients</span>
+          <span class="stat-label">Clients</span>
         </div>
         <div class="stat-item">
-          <span class="stat-value">15,000+</span>
+          <span class="stat-value">15K+</span>
           <span class="stat-label">Talent Network</span>
         </div>
         <div class="stat-item">
           <span class="stat-value">98%</span>
-          <span class="stat-label">Client Satisfaction</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Why Choose Section -->
-    <section class="why-section">
-      <div class="container">
-        <div style="text-align: center; max-width: 600px; margin: 0 auto 48px;">
-          <span class="section-label" style="color: var(--color-accent); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.85rem;">Why Getiva</span>
-          <h2 style="font-size: 2rem; font-weight: 700; color: #1a1a2e; margin: 12px 0;">Industry-Specific Expertise</h2>
-          <p style="color: #64748b; font-size: 1.05rem;">What makes us different in serving your industry.</p>
-        </div>
-        <div class="why-grid">
-          <div class="why-card">
-            <div class="why-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                <circle cx="9" cy="7" r="4"/>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-              </svg>
-            </div>
-            <h3>Specialized Recruiters</h3>
-            <p>Our recruiters focus on specific industries, building deep networks and understanding the nuances of each sector's technical requirements.</p>
-          </div>
-          <div class="why-card">
-            <div class="why-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                <path d="M9 12l2 2 4-4"/>
-              </svg>
-            </div>
-            <h3>Compliance Awareness</h3>
-            <p>We understand regulatory requirements like HIPAA, SOX, FedRAMP, and PCI-DSS, ensuring candidates meet your compliance needs.</p>
-          </div>
-          <div class="why-card">
-            <div class="why-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"/>
-                <path d="M12 6v6l4 2"/>
-              </svg>
-            </div>
-            <h3>Rapid Response</h3>
-            <p>Industry knowledge enables faster candidate matching. We often present qualified candidates within 24-48 hours of engagement.</p>
-          </div>
-          <div class="why-card">
-            <div class="why-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                <polyline points="22 4 12 14.01 9 11.01"/>
-              </svg>
-            </div>
-            <h3>Proven Track Record</h3>
-            <p>Years of successful placements across each industry vertical, with high retention rates and client satisfaction scores.</p>
-          </div>
+          <span class="stat-label">Satisfaction</span>
         </div>
       </div>
     </section>
 
     <!-- CTA Section -->
     <section class="industries-cta">
-      <div class="cta-card">
-        <h2>Let's Discuss Your Industry Needs</h2>
-        <p>Connect with an industry specialist to explore how Getiva can support your organization's IT staffing and consulting requirements.</p>
+      <div class="cta-content">
+        <h2>Ready to Find Industry-Specific Talent?</h2>
+        <p>Our recruiters specialize in your sector. Let's discuss your hiring needs.</p>
         <div class="cta-buttons">
-          <a href="contact.html" class="btn btn-primary">Contact Our Team</a>
-          <a href="services.html" class="btn btn-secondary">View Our Services</a>
+          <a href="contact.html" class="btn btn-primary">Hire Talent</a>
+          <a href="candidates.html" class="btn btn-secondary">Find Jobs</a>
         </div>
-        <p style="margin-top: 24px; font-size: 0.9rem; color: #94a3b8;">
-          Call us directly: <a href="tel:+13147059794" style="color: var(--color-accent);">+1 (314) 705-9794</a>
-        </p>
       </div>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-brand">
@@ -931,75 +726,37 @@
             <a href="mailto:info@getivasolutions.com">info@getivasolutions.com</a>
           </li>
         </ul>
-        <div class="footer-social-inline">
-          <a href="https://www.linkedin.com/company/getiva-solutions/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-          </a>
-          <a href="https://x.com/Getivasolutions" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          </a>
-          <a href="https://www.instagram.com/getivasolutions/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-          </a>
-        </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p class="mb-0">© 2026 Getiva Solutions. All rights reserved.</p>
-      <p class="mb-0">We Get It Done For You.</p>
+      <p>© 2026 Getiva Solutions. All rights reserved.</p>
+      <p>We Get It Done For You.</p>
     </div>
   </footer>
+
   <script src="nav.js"></script>
   <script src="motion.js"></script>
   <script>
-    // Rich UI Animations
-    document.addEventListener('DOMContentLoaded', function() {
-      const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-      };
+    // Animate cards on scroll
+    (function() {
+      var cards = document.querySelectorAll('.industry-card');
+      if (!cards.length) return;
       
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry, index) => {
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry, index) {
           if (entry.isIntersecting) {
-            setTimeout(() => {
+            setTimeout(function() {
               entry.target.classList.add('visible');
-            }, index * 100);
+            }, index * 50);
+            observer.unobserve(entry.target);
           }
         });
-      }, observerOptions);
+      }, { threshold: 0.1 });
       
-      document.querySelectorAll('.industry-card-large').forEach(card => observer.observe(card));
-      document.querySelectorAll('.stat-item').forEach(stat => observer.observe(stat));
-      document.querySelectorAll('.why-card').forEach(card => observer.observe(card));
-      
-      // Animate stat counters
-      const statValues = document.querySelectorAll('.stat-value[data-count]');
-      statValues.forEach(stat => {
-        const target = parseInt(stat.dataset.count);
-        const duration = 1500;
-        const step = target / (duration / 16);
-        let current = 0;
-        
-        const updateCount = () => {
-          current += step;
-          if (current < target) {
-            stat.textContent = Math.floor(current);
-            requestAnimationFrame(updateCount);
-          } else {
-            stat.textContent = target;
-          }
-        };
-        
-        const statObserver = new IntersectionObserver((entries) => {
-          if (entries[0].isIntersecting) {
-            updateCount();
-            statObserver.disconnect();
-          }
-        });
-        statObserver.observe(stat);
+      cards.forEach(function(card) {
+        observer.observe(card);
       });
-    });
+    })();
   </script>
 </body>
 </html>
