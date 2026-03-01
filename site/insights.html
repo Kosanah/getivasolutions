@@ -81,7 +81,7 @@
               <span class="ig-meta-dot">•</span>
               <span>5 min read</span>
             </div>
-            <a href="#" class="ig-read-more">Read Article →</a>
+            <button class="ig-read-more" onclick="openArticle('article-1')">Read Article →</button>
           </div>
         </article>
       </div>
@@ -93,7 +93,7 @@
         <div class="ig-articles-grid">
           
           <!-- Article 2 -->
-          <article class="ig-article-card" data-category="industry">
+          <article class="ig-article-card" data-category="industry" onclick="openArticle('article-2')">
             <div class="ig-article-image">
               <img src="https://images.unsplash.com/photo-1497215842964-222b430dc094?w=600&q=80" alt="Modern office workspace with city view" loading="lazy">
             </div>
@@ -110,7 +110,7 @@
           </article>
 
           <!-- Article 3 -->
-          <article class="ig-article-card" data-category="career">
+          <article class="ig-article-card" data-category="career" onclick="openArticle('article-3')">
             <div class="ig-article-image">
               <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80" alt="Professional woman in office setting" loading="lazy">
             </div>
@@ -127,7 +127,7 @@
           </article>
 
           <!-- Article 4 -->
-          <article class="ig-article-card" data-category="industry">
+          <article class="ig-article-card" data-category="industry" onclick="openArticle('article-4')">
             <div class="ig-article-image">
               <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&q=80" alt="Software developer working on code" loading="lazy">
             </div>
@@ -144,7 +144,7 @@
           </article>
 
           <!-- Article 5 -->
-          <article class="ig-article-card" data-category="company">
+          <article class="ig-article-card" data-category="company" onclick="openArticle('article-5')">
             <div class="ig-article-image">
               <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&q=80" alt="Business professionals shaking hands" loading="lazy">
             </div>
@@ -161,7 +161,7 @@
           </article>
 
           <!-- Article 6 -->
-          <article class="ig-article-card" data-category="career">
+          <article class="ig-article-card" data-category="career" onclick="openArticle('article-6')">
             <div class="ig-article-image">
               <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" alt="Professional headshot portrait" loading="lazy">
             </div>
@@ -178,7 +178,7 @@
           </article>
 
           <!-- Article 7 -->
-          <article class="ig-article-card" data-category="industry">
+          <article class="ig-article-card" data-category="industry" onclick="openArticle('article-7')">
             <div class="ig-article-image">
               <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&q=80" alt="Tech team collaborating in meeting room" loading="lazy">
             </div>
@@ -195,7 +195,7 @@
           </article>
 
           <!-- Article 8 -->
-          <article class="ig-article-card" data-category="company">
+          <article class="ig-article-card" data-category="company" onclick="openArticle('article-8')">
             <div class="ig-article-image">
               <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80" alt="Executive business meeting" loading="lazy">
             </div>
@@ -212,7 +212,7 @@
           </article>
 
           <!-- Article 9 -->
-          <article class="ig-article-card" data-category="career">
+          <article class="ig-article-card" data-category="career" onclick="openArticle('article-9')">
             <div class="ig-article-image">
               <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&q=80" alt="Professional using laptop for remote work" loading="lazy">
             </div>
@@ -229,7 +229,7 @@
           </article>
 
           <!-- Article 10 -->
-          <article class="ig-article-card" data-category="industry">
+          <article class="ig-article-card" data-category="industry" onclick="openArticle('article-10')">
             <div class="ig-article-image">
               <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&q=80" alt="AI and automation technology" loading="lazy">
             </div>
@@ -246,7 +246,7 @@
           </article>
 
           <!-- Article 11 -->
-          <article class="ig-article-card" data-category="company">
+          <article class="ig-article-card" data-category="company" onclick="openArticle('article-11')">
             <div class="ig-article-image">
               <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&q=80" alt="Diverse team in office environment" loading="lazy">
             </div>
@@ -263,7 +263,7 @@
           </article>
 
           <!-- Article 12 -->
-          <article class="ig-article-card" data-category="career">
+          <article class="ig-article-card" data-category="career" onclick="openArticle('article-12')">
             <div class="ig-article-image">
               <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80" alt="Professional development and learning" loading="lazy">
             </div>
@@ -298,6 +298,19 @@
         </div>
       </div>
     </section>
+
+    <!-- Article Modal -->
+    <div class="article-modal" id="articleModal">
+      <div class="article-modal-overlay" onclick="closeArticle()"></div>
+      <div class="article-modal-content">
+        <button class="article-modal-close" onclick="closeArticle()">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+        <div class="article-modal-body" id="articleModalBody">
+          <!-- Dynamic content loaded here -->
+        </div>
+      </div>
+    </div>
   </main>
 
   <!-- Footer -->
@@ -408,6 +421,474 @@
           }
         });
       });
+    });
+
+    // Article Content Data
+    const articleContent = {
+      'article-1': {
+        tag: 'Company News',
+        title: 'Building High-Performance Technology Teams',
+        date: 'February 28, 2026',
+        readTime: '5 min read',
+        image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80',
+        content: `
+          <p class="article-intro">At Getiva Solutions, we believe that the foundation of every successful technology initiative is the team behind it. Building high-performance technology teams isn't just about finding skilled individuals—it's about assembling the right combination of talent, culture fit, and collaborative spirit.</p>
+          
+          <h3>The Getiva Methodology</h3>
+          <p>Our approach to team building has been refined over years of working with Fortune 500 companies and innovative startups alike. We focus on three core pillars:</p>
+          
+          <ul>
+            <li><strong>Technical Excellence:</strong> We rigorously assess technical capabilities through practical evaluations, ensuring candidates can deliver from day one.</li>
+            <li><strong>Cultural Alignment:</strong> Skills matter, but so does fit. We take time to understand your organization's values and work environment.</li>
+            <li><strong>Long-term Potential:</strong> We look beyond immediate needs to identify candidates who can grow with your organization.</li>
+          </ul>
+          
+          <h3>Why It Matters</h3>
+          <p>The cost of a bad hire extends far beyond recruitment expenses. Productivity losses, team morale impact, and project delays can multiply the true cost significantly. Our methodology reduces these risks by ensuring every placement is strategic and well-considered.</p>
+          
+          <h3>Results That Speak</h3>
+          <p>Our clients report 40% faster time-to-productivity for Getiva-placed candidates compared to traditional hiring methods. More importantly, our retention rates exceed industry averages by 25%, demonstrating the value of our thorough vetting process.</p>
+          
+          <blockquote>"Getiva doesn't just fill positions—they build teams. The difference is tangible in the quality of work and team cohesion we've experienced."<br><span>— VP of Engineering, Fortune 500 Technology Company</span></blockquote>
+          
+          <h3>Getting Started</h3>
+          <p>Whether you're building a new team from scratch or augmenting existing capabilities, our team is ready to help. Contact us to discuss your technology staffing needs and discover how we can help you build the high-performance team your projects deserve.</p>
+        `
+      },
+      'article-2': {
+        tag: 'Industry Insights',
+        title: 'The Future of Workforce Solutions',
+        date: 'February 25, 2026',
+        readTime: '7 min read',
+        image: 'https://images.unsplash.com/photo-1497215842964-222b430dc094?w=1200&q=80',
+        content: `
+          <p class="article-intro">The IT staffing industry is undergoing a fundamental transformation. From AI-powered recruitment tools to the rise of remote-first policies, the trends shaping 2026 are redefining how organizations find and retain top talent.</p>
+          
+          <h3>Key Trends Shaping the Industry</h3>
+          
+          <h4>1. AI-Augmented Recruitment</h4>
+          <p>Artificial intelligence is no longer a future concept—it's here and transforming every aspect of talent acquisition. From resume screening to candidate matching, AI tools are helping recruiters work smarter, not harder.</p>
+          
+          <h4>2. Skills-Based Hiring</h4>
+          <p>Traditional credential-based hiring is giving way to skills-first approaches. Companies are increasingly valuing practical abilities over formal education, opening doors for talented individuals from non-traditional backgrounds.</p>
+          
+          <h4>3. The Gig Economy Matures</h4>
+          <p>Contract and project-based work is becoming mainstream even for senior-level positions. Organizations are building flexible workforce models that combine full-time employees with specialized contractors.</p>
+          
+          <h3>What This Means for Organizations</h3>
+          <p>Adapting to these trends requires a strategic approach to workforce planning. Companies that embrace flexibility, invest in upskilling, and leverage data-driven recruitment will have a significant competitive advantage.</p>
+          
+          <h3>How Getiva Is Leading</h3>
+          <p>At Getiva Solutions, we've invested heavily in modern recruitment technologies while maintaining the human touch that makes lasting placements. Our hybrid approach combines AI efficiency with experienced recruiter judgment to deliver superior results.</p>
+        `
+      },
+      'article-3': {
+        tag: 'Career Tips',
+        title: 'Your Career Journey Starts Here',
+        date: 'February 20, 2026',
+        readTime: '6 min read',
+        image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1200&q=80',
+        content: `
+          <p class="article-intro">Navigating the tech job market can feel overwhelming, but with the right strategy and preparation, you can position yourself for success. Here's your comprehensive guide to landing your next great role.</p>
+          
+          <h3>Building Your Personal Brand</h3>
+          <p>In today's competitive market, your online presence matters. A strong LinkedIn profile, active GitHub contributions, or a personal portfolio can set you apart from other candidates.</p>
+          
+          <h4>Key Elements of a Strong Profile:</h4>
+          <ul>
+            <li>Professional headshot and compelling headline</li>
+            <li>Detailed work history with quantifiable achievements</li>
+            <li>Recommendations from colleagues and managers</li>
+            <li>Active engagement with industry content</li>
+          </ul>
+          
+          <h3>Networking Strategically</h3>
+          <p>80% of jobs are filled through networking. Attend industry events, join professional groups, and don't be afraid to reach out to people in roles you aspire to. Most professionals are happy to share advice.</p>
+          
+          <h3>Preparing for Interviews</h3>
+          <p>Technical skills get you the interview; soft skills get you the job. Practice common behavioral questions using the STAR method (Situation, Task, Action, Result) and prepare thoughtful questions for your interviewers.</p>
+          
+          <h3>Negotiating Your Offer</h3>
+          <p>Don't leave money on the table. Research market rates for your role and experience level. Remember that compensation includes more than base salary—consider benefits, equity, flexibility, and growth opportunities.</p>
+          
+          <h3>Working with Getiva</h3>
+          <p>Our recruiters are more than matchmakers—they're career advocates. We provide interview coaching, market insights, and negotiation support to help you secure the best possible opportunity.</p>
+        `
+      },
+      'article-4': {
+        tag: 'Industry Insights',
+        title: 'Top Skills Employers Want in 2026',
+        date: 'February 15, 2026',
+        readTime: '4 min read',
+        image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200&q=80',
+        content: `
+          <p class="article-intro">The skills landscape is evolving rapidly. Based on our analysis of thousands of job placements, here are the technical and soft skills that employers are prioritizing in 2026.</p>
+          
+          <h3>Technical Skills in High Demand</h3>
+          
+          <h4>1. Cloud Architecture (AWS, Azure, GCP)</h4>
+          <p>Cloud expertise remains the most sought-after technical skill. Multi-cloud experience is particularly valuable as organizations diversify their infrastructure.</p>
+          
+          <h4>2. AI/ML Engineering</h4>
+          <p>From implementing LLMs to building custom ML pipelines, AI expertise commands premium compensation and opportunities.</p>
+          
+          <h4>3. Cybersecurity</h4>
+          <p>With threats increasing in sophistication, security professionals are in critical demand across all industries.</p>
+          
+          <h4>4. DevOps & Platform Engineering</h4>
+          <p>Organizations need experts who can build and maintain modern CI/CD pipelines and developer platforms.</p>
+          
+          <h3>Soft Skills That Matter</h3>
+          <ul>
+            <li><strong>Communication:</strong> Ability to explain technical concepts to non-technical stakeholders</li>
+            <li><strong>Adaptability:</strong> Willingness to learn new technologies and methodologies</li>
+            <li><strong>Problem-Solving:</strong> Critical thinking and creative solution development</li>
+            <li><strong>Leadership:</strong> Ability to mentor others and drive projects forward</li>
+          </ul>
+          
+          <h3>Investing in Your Skills</h3>
+          <p>The best time to develop new skills is before you need them. Consider certifications, online courses, and hands-on projects to stay ahead of the curve.</p>
+        `
+      },
+      'article-5': {
+        tag: 'Company News',
+        title: 'Getiva Expands Enterprise Partnerships',
+        date: 'February 10, 2026',
+        readTime: '3 min read',
+        image: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=1200&q=80',
+        content: `
+          <p class="article-intro">We're thrilled to announce significant expansion of our enterprise partnership program, welcoming several Fortune 500 companies to the Getiva family.</p>
+          
+          <h3>Growing Our Impact</h3>
+          <p>These new partnerships reflect our commitment to delivering exceptional IT staffing solutions at scale. Our enterprise clients trust us to fill critical roles across their technology organizations, from software engineering to data science to cybersecurity.</p>
+          
+          <h3>What Sets Us Apart</h3>
+          <p>Our enterprise partners choose Getiva for several key reasons:</p>
+          <ul>
+            <li><strong>Speed:</strong> Average time-to-fill 40% faster than industry standard</li>
+            <li><strong>Quality:</strong> 95% client satisfaction rating on placements</li>
+            <li><strong>Compliance:</strong> SOC 2 certified with rigorous security practices</li>
+            <li><strong>Flexibility:</strong> Scalable solutions from single placements to managed teams</li>
+          </ul>
+          
+          <h3>Looking Ahead</h3>
+          <p>As we grow our enterprise relationships, we remain committed to the personalized service and quality that defines Getiva. Every client, regardless of size, receives the same dedication to excellence.</p>
+          
+          <h3>Join Our Success</h3>
+          <p>Whether you're an enterprise seeking staffing solutions or a professional looking for your next opportunity, we invite you to experience the Getiva difference.</p>
+        `
+      },
+      'article-6': {
+        tag: 'Career Tips',
+        title: 'Interview Strategies That Work',
+        date: 'February 5, 2026',
+        readTime: '5 min read',
+        image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&q=80',
+        content: `
+          <p class="article-intro">Interviewing is both an art and a science. After facilitating thousands of successful placements, our recruiters have identified the strategies that consistently help candidates stand out.</p>
+          
+          <h3>Before the Interview</h3>
+          <h4>Research Thoroughly</h4>
+          <p>Go beyond the company website. Read recent news, understand their products, and research your interviewers on LinkedIn. This preparation shows genuine interest and enables more meaningful conversations.</p>
+          
+          <h4>Prepare Your Stories</h4>
+          <p>Have 5-7 specific examples ready that demonstrate your key achievements and how you handle challenges. Use the STAR method to structure your responses clearly.</p>
+          
+          <h3>During the Interview</h3>
+          <h4>First Impressions Matter</h4>
+          <p>Dress appropriately, arrive early (or log in early for virtual), and bring positive energy. A strong handshake and genuine smile set the right tone.</p>
+          
+          <h4>Ask Great Questions</h4>
+          <p>Your questions reveal your priorities and thinking. Ask about team dynamics, success metrics, and growth opportunities. Avoid questions easily answered by basic research.</p>
+          
+          <h3>After the Interview</h3>
+          <p>Send a thoughtful thank-you email within 24 hours. Reference specific discussion points and reiterate your interest in the role. This simple step is overlooked by many candidates but noticed by all hiring managers.</p>
+          
+          <h3>Common Mistakes to Avoid</h3>
+          <ul>
+            <li>Speaking negatively about previous employers</li>
+            <li>Providing vague answers without specific examples</li>
+            <li>Failing to express genuine enthusiasm for the role</li>
+            <li>Not preparing questions for the interviewer</li>
+          </ul>
+        `
+      },
+      'article-7': {
+        tag: 'Industry Insights',
+        title: 'Remote Work: The New Standard',
+        date: 'January 28, 2026',
+        readTime: '6 min read',
+        image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&q=80',
+        content: `
+          <p class="article-intro">What began as a pandemic necessity has evolved into a permanent shift in how we work. Remote and hybrid models are no longer exceptions—they're expectations.</p>
+          
+          <h3>The State of Remote Work in 2026</h3>
+          <p>Our data shows that 78% of IT professionals now expect remote or hybrid options as standard. Companies that insist on full-time office presence are finding it increasingly difficult to attract top talent.</p>
+          
+          <h3>Benefits for Organizations</h3>
+          <ul>
+            <li><strong>Expanded Talent Pool:</strong> Hire the best regardless of location</li>
+            <li><strong>Reduced Overhead:</strong> Lower real estate and facility costs</li>
+            <li><strong>Improved Retention:</strong> Flexibility is a top retention factor</li>
+            <li><strong>Increased Productivity:</strong> Many roles see productivity gains</li>
+          </ul>
+          
+          <h3>Challenges to Address</h3>
+          <p>Remote work isn't without challenges. Organizations must intentionally build culture, ensure equitable treatment of remote workers, and invest in collaboration tools and practices.</p>
+          
+          <h3>Best Practices for Success</h3>
+          <h4>For Employers:</h4>
+          <ul>
+            <li>Establish clear communication norms and expectations</li>
+            <li>Invest in collaboration and project management tools</li>
+            <li>Create opportunities for in-person connection</li>
+            <li>Train managers on leading distributed teams</li>
+          </ul>
+          
+          <h4>For Employees:</h4>
+          <ul>
+            <li>Create a dedicated workspace</li>
+            <li>Establish boundaries between work and personal time</li>
+            <li>Over-communicate to maintain visibility</li>
+            <li>Prioritize virtual relationship building</li>
+          </ul>
+        `
+      },
+      'article-8': {
+        tag: 'Company News',
+        title: 'Getiva Named Top Staffing Firm 2026',
+        date: 'January 22, 2026',
+        readTime: '3 min read',
+        image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200&q=80',
+        content: `
+          <p class="article-intro">We're honored to announce that Getiva Solutions has been recognized as a Top IT Staffing Firm for 2026, reflecting our team's dedication to excellence in talent delivery.</p>
+          
+          <h3>Recognition of Our Mission</h3>
+          <p>This award recognizes what we strive for every day: exceptional service to our clients and candidates. It validates our approach of combining technology with human expertise to create lasting professional relationships.</p>
+          
+          <h3>Key Metrics That Earned Recognition</h3>
+          <ul>
+            <li><strong>Client Satisfaction:</strong> 96% client satisfaction rating</li>
+            <li><strong>Candidate Experience:</strong> 4.8/5 average candidate rating</li>
+            <li><strong>Retention Rate:</strong> 25% above industry average</li>
+            <li><strong>Time-to-Fill:</strong> 40% faster than industry standard</li>
+          </ul>
+          
+          <h3>Thank You to Our Team</h3>
+          <p>This recognition belongs to every member of the Getiva team. Our recruiters, account managers, and support staff work tirelessly to deliver on our promise: We Get It Done For You.</p>
+          
+          <h3>Thank You to Our Partners</h3>
+          <p>We're equally grateful to the clients who trust us with their staffing needs and the professionals who trust us with their careers. Your partnership makes this recognition possible.</p>
+          
+          <h3>Looking Forward</h3>
+          <p>This award inspires us to raise the bar even higher. We're committed to continuous improvement and innovation in service of our mission.</p>
+        `
+      },
+      'article-9': {
+        tag: 'Career Tips',
+        title: 'Mastering Remote Job Interviews',
+        date: 'January 18, 2026',
+        readTime: '5 min read',
+        image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80',
+        content: `
+          <p class="article-intro">Virtual interviews are now the norm for most technology positions. Mastering this format requires specific preparation and techniques that differ from in-person interviews.</p>
+          
+          <h3>Technical Preparation</h3>
+          <h4>Test Your Setup</h4>
+          <p>Before any interview, test your camera, microphone, and internet connection. Use the same device and location you'll use for the actual interview. Have a backup plan (mobile hotspot, phone dial-in) in case of technical issues.</p>
+          
+          <h4>Optimize Your Environment</h4>
+          <ul>
+            <li>Choose a quiet, well-lit space</li>
+            <li>Position camera at eye level</li>
+            <li>Use a neutral, professional background</li>
+            <li>Ensure good lighting on your face</li>
+            <li>Minimize potential interruptions</li>
+          </ul>
+          
+          <h3>Virtual Presence Tips</h3>
+          <h4>Eye Contact</h4>
+          <p>Look at the camera, not the screen, when speaking. This creates the impression of direct eye contact with your interviewer.</p>
+          
+          <h4>Body Language</h4>
+          <p>Sit up straight and position yourself so your head and shoulders are visible. Use hand gestures naturally but keep them in frame. Nod and react visibly to show engagement.</p>
+          
+          <h4>Audio Clarity</h4>
+          <p>Speak clearly and slightly slower than normal. Use a quality microphone if possible, and consider using headphones to eliminate echo.</p>
+          
+          <h3>Common Pitfalls to Avoid</h3>
+          <ul>
+            <li>Looking at yourself instead of the camera</li>
+            <li>Having visible distractions in the background</li>
+            <li>Forgetting to mute notifications</li>
+            <li>Reading from notes too obviously</li>
+          </ul>
+        `
+      },
+      'article-10': {
+        tag: 'Industry Insights',
+        title: 'AI in Recruitment: What It Means for You',
+        date: 'January 12, 2026',
+        readTime: '7 min read',
+        image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1200&q=80',
+        content: `
+          <p class="article-intro">Artificial intelligence is revolutionizing how companies find and evaluate talent. Understanding these changes is essential for both job seekers and hiring managers.</p>
+          
+          <h3>How AI Is Changing Recruitment</h3>
+          
+          <h4>Resume Screening</h4>
+          <p>AI systems now handle initial resume screening for many positions. These tools look for keyword matches, skills alignment, and experience patterns to identify promising candidates.</p>
+          
+          <h4>Candidate Sourcing</h4>
+          <p>AI-powered tools scan professional networks and databases to identify passive candidates who match specific criteria, even before they apply.</p>
+          
+          <h4>Interview Analysis</h4>
+          <p>Some organizations use AI to analyze video interviews, evaluating factors like communication skills, sentiment, and engagement levels.</p>
+          
+          <h3>What This Means for Job Seekers</h3>
+          <ul>
+            <li><strong>Optimize for ATS:</strong> Use standard formatting and include relevant keywords</li>
+            <li><strong>Quantify Achievements:</strong> AI systems respond well to measurable results</li>
+            <li><strong>Match Job Descriptions:</strong> Tailor your resume to each application</li>
+            <li><strong>Keep Profiles Updated:</strong> AI sources from LinkedIn and other platforms</li>
+          </ul>
+          
+          <h3>The Human Element Remains Critical</h3>
+          <p>While AI excels at efficiency and pattern matching, human judgment remains essential for evaluating culture fit, potential, and the nuances that make someone truly right for a role. At Getiva, we use AI as a tool to enhance our recruiters' capabilities, not replace them.</p>
+          
+          <h3>Looking Ahead</h3>
+          <p>AI capabilities will continue to evolve, but the fundamentals of career success remain unchanged: develop valuable skills, build relationships, and present yourself professionally.</p>
+        `
+      },
+      'article-11': {
+        tag: 'Company News',
+        title: 'Diversity & Inclusion at Getiva',
+        date: 'January 8, 2026',
+        readTime: '4 min read',
+        image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&q=80',
+        content: `
+          <p class="article-intro">Diversity isn't just the right thing to do—it's a business imperative. At Getiva Solutions, we're committed to building diverse teams and fostering an inclusive culture.</p>
+          
+          <h3>Our Commitment</h3>
+          <p>We believe that diverse teams drive innovation and better outcomes. This belief shapes how we operate internally and how we support our clients' talent acquisition efforts.</p>
+          
+          <h3>What We're Doing</h3>
+          <h4>Internal Initiatives</h4>
+          <ul>
+            <li>Diverse candidate slates for all internal positions</li>
+            <li>Unconscious bias training for all team members</li>
+            <li>Employee resource groups and mentorship programs</li>
+            <li>Regular pay equity audits</li>
+          </ul>
+          
+          <h4>Supporting Our Clients</h4>
+          <ul>
+            <li>Diverse candidate sourcing strategies</li>
+            <li>Inclusive job description reviews</li>
+            <li>Bias-reduced screening processes</li>
+            <li>DEI metrics and reporting</li>
+          </ul>
+          
+          <h3>Measuring Progress</h3>
+          <p>We track and report on diversity metrics for both our internal team and our placements. Transparency drives accountability and improvement.</p>
+          
+          <h3>The Business Case</h3>
+          <p>Research consistently shows that diverse teams outperform homogeneous ones. Companies in the top quartile for diversity are 35% more likely to have above-average financial returns.</p>
+          
+          <h3>Join Our Mission</h3>
+          <p>Whether you're a client seeking to build a more diverse team or a professional looking for an inclusive workplace, we're here to help.</p>
+        `
+      },
+      'article-12': {
+        tag: 'Career Tips',
+        title: 'Upskilling for the Future',
+        date: 'January 5, 2026',
+        readTime: '6 min read',
+        image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1200&q=80',
+        content: `
+          <p class="article-intro">The half-life of technical skills continues to shrink. Continuous learning isn't optional—it's essential for career longevity. Here's how to future-proof your career through strategic upskilling.</p>
+          
+          <h3>Identifying What to Learn</h3>
+          <p>Not all skills are equally valuable. Focus your learning on areas with growing demand and long-term relevance:</p>
+          <ul>
+            <li>Skills mentioned frequently in job postings for roles you aspire to</li>
+            <li>Technologies your current organization is adopting</li>
+            <li>Foundational skills that transfer across technologies</li>
+            <li>Areas where you can combine technical and domain expertise</li>
+          </ul>
+          
+          <h3>Certifications Worth Considering</h3>
+          <h4>Cloud Platforms</h4>
+          <p>AWS, Azure, and GCP certifications remain highly valued. Start with associate-level and progress to professional/specialty certifications.</p>
+          
+          <h4>Security</h4>
+          <p>CISSP, CISM, and CompTIA Security+ are recognized across industries. Security skills are increasingly required even for non-security roles.</p>
+          
+          <h4>Data & AI</h4>
+          <p>Google's Data Engineering and AWS Machine Learning certifications validate in-demand capabilities.</p>
+          
+          <h3>Learning Strategies That Work</h3>
+          <ul>
+            <li><strong>Project-Based Learning:</strong> Build real things to solidify knowledge</li>
+            <li><strong>Teaching Others:</strong> Explaining concepts reinforces understanding</li>
+            <li><strong>Consistent Schedule:</strong> Regular study beats occasional cramming</li>
+            <li><strong>Community Involvement:</strong> Join groups and participate in discussions</li>
+          </ul>
+          
+          <h3>Making Time for Learning</h3>
+          <p>Busy professionals can find time by leveraging commutes, lunch breaks, and dedicated weekly learning blocks. Many employers offer learning budgets and dedicated time—take advantage of these benefits.</p>
+        `
+      }
+    };
+
+    // Modal Functions
+    function openArticle(articleId) {
+      const article = articleContent[articleId];
+      if (!article) return;
+      
+      const modal = document.getElementById('articleModal');
+      const modalBody = document.getElementById('articleModalBody');
+      
+      modalBody.innerHTML = `
+        <div class="article-modal-header">
+          <span class="ig-tag">${article.tag}</span>
+          <h1>${article.title}</h1>
+          <div class="article-modal-meta">
+            <span>${article.date}</span>
+            <span class="ig-meta-dot">•</span>
+            <span>${article.readTime}</span>
+          </div>
+        </div>
+        <div class="article-modal-image">
+          <img src="${article.image}" alt="${article.title}">
+        </div>
+        <div class="article-modal-text">
+          ${article.content}
+        </div>
+        <div class="article-modal-cta">
+          <p>Ready to take the next step in your career or find exceptional talent?</p>
+          <div class="article-modal-buttons">
+            <a href="contact.html" class="btn btn-primary">Contact Us</a>
+            <a href="careers.html" class="btn btn-secondary">View Open Positions</a>
+          </div>
+        </div>
+      `;
+      
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeArticle() {
+      const modal = document.getElementById('articleModal');
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeArticle();
+      }
     });
   </script>
 </body>
