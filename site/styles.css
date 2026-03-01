@@ -2593,6 +2593,192 @@ body.menu-open .hamburger-line:nth-child(3) {
   }
 }
 
+/* ==========================================================================
+   DELIVERY MODEL SECTION - ENHANCED AWARD STYLE
+   ========================================================================== */
+
+.delivery-section-enhanced {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+.delivery-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-label-gradient {
+  display: inline-block;
+  padding: 8px 20px;
+  background: linear-gradient(135deg, var(--color-accent), #14b8a6);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 50px;
+  margin-bottom: 20px;
+}
+
+.delivery-header h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin: 0 0 16px;
+}
+
+.delivery-header p {
+  font-size: 1.125rem;
+  color: #64748b;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.delivery-grid-enhanced {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.delivery-card-enhanced {
+  position: relative;
+  background: white;
+  border-radius: 20px;
+  padding: 48px 32px 40px;
+  text-align: center;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.delivery-card-enhanced::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-accent), #14b8a6);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.delivery-card-enhanced:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+}
+
+.delivery-card-enhanced:hover::before {
+  transform: scaleX(1);
+}
+
+.delivery-icon-enhanced {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 24px;
+  background: linear-gradient(135deg, var(--color-accent), #14b8a6);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+}
+
+.delivery-icon-enhanced svg {
+  width: 40px;
+  height: 40px;
+  color: white;
+  transition: transform 0.4s ease;
+}
+
+.delivery-card-enhanced:hover .delivery-icon-enhanced {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 10px 30px rgba(29, 195, 164, 0.4);
+}
+
+.delivery-card-enhanced:hover .delivery-icon-enhanced svg {
+  transform: scale(1.1);
+}
+
+.delivery-number {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--color-accent);
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+.delivery-card-enhanced:hover .delivery-number {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.delivery-card-enhanced h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin: 0 0 12px;
+  transition: color 0.3s ease;
+}
+
+.delivery-card-enhanced:hover h3 {
+  color: var(--color-accent);
+}
+
+.delivery-card-enhanced p {
+  font-size: 0.9375rem;
+  color: #64748b;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Stagger animation delays */
+.delivery-card-enhanced:nth-child(1) { transition-delay: 0s; }
+.delivery-card-enhanced:nth-child(2) { transition-delay: 0.1s; }
+.delivery-card-enhanced:nth-child(3) { transition-delay: 0.2s; }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .delivery-grid-enhanced {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .delivery-section-enhanced {
+    padding: 70px 0;
+  }
+  
+  .delivery-header h2 {
+    font-size: 1.875rem;
+  }
+  
+  .delivery-grid-enhanced {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .delivery-card-enhanced {
+    padding: 40px 24px 32px;
+  }
+  
+  .delivery-icon-enhanced {
+    width: 64px;
+    height: 64px;
+  }
+  
+  .delivery-icon-enhanced svg {
+    width: 32px;
+    height: 32px;
+  }
+}
+
 /* Legacy service-card styles */
 .service-card {
   background: var(--color-bg);
