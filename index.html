@@ -372,8 +372,8 @@
     <section class="content-block">
       <div class="content-block-inner">
         <div class="content-block-image content-block-video">
-          <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80">
-            <source src="https://videos.pexels.com/video-files/3252128/3252128-sd_640_360_25fps.mp4" type="video/mp4">
+          <video autoplay muted loop playsinline id="about-video" poster="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80">
+            <source src="https://cdn.pixabay.com/video/2020/05/25/40130-424930032_large.mp4" type="video/mp4">
           </video>
         </div>
         <div class="content-block-text">
@@ -1294,6 +1294,15 @@
           document.body.removeEventListener('click', once);
         }, { once: true });
       }
+      // About section video
+      var aboutVideo = document.getElementById('about-video');
+      if (aboutVideo) {
+        aboutVideo.play().catch(function() {});
+      }
+      // Play all videos on page
+      document.querySelectorAll('video').forEach(function(video) {
+        video.play().catch(function() {});
+      });
     })();
   </script>
   <script>
