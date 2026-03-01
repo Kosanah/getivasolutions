@@ -7484,3 +7484,111 @@ button:focus-visible {
   }
 }
 
+/* =============================================================================
+   VALUES SECTION - Insight Global Clean Style
+   ============================================================================= */
+
+.ig-values-section {
+  padding: 100px 0;
+  background: #f8fafc;
+}
+
+.ig-values-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 60px;
+}
+
+.ig-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-accent);
+  margin-bottom: 12px;
+}
+
+.ig-values-header h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 700;
+  color: var(--color-primary);
+  margin: 0 0 16px;
+  line-height: 1.2;
+}
+
+.ig-values-header p {
+  font-size: 1.125rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.ig-values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.ig-value-card {
+  background: #fff;
+  padding: 40px 32px;
+  border-bottom: 4px solid var(--color-accent);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ig-value-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(10, 37, 64, 0.1);
+}
+
+.ig-value-number {
+  font-size: 3rem;
+  font-weight: 800;
+  color: rgba(10, 37, 64, 0.08);
+  line-height: 1;
+  margin-bottom: 20px;
+  font-family: var(--font-display);
+}
+
+.ig-value-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin: 0 0 12px;
+}
+
+.ig-value-card p {
+  font-size: 0.9375rem;
+  color: #64748b;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .ig-values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .ig-values-section {
+    padding: 70px 0;
+  }
+  
+  .ig-values-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .ig-value-card {
+    padding: 32px 24px;
+  }
+  
+  .ig-value-number {
+    font-size: 2.5rem;
+  }
+}
+
