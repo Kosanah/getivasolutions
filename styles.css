@@ -4788,3 +4788,508 @@ body.menu-open .hamburger-line:nth-child(3) {
     flex-wrap: wrap;
   }
 }
+
+/* ========================================
+   PHASE 1: Insight Global Style Features
+   ======================================== */
+
+/* ----- Trusted By Logo Strip ----- */
+.trusted-by-strip {
+  background: linear-gradient(135deg, #0a2540 0%, #1a3a5c 100%);
+  padding: 24px 0;
+  overflow: hidden;
+}
+
+.trusted-by-strip .container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.trusted-by-label {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.trusted-by-logos {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.trusted-logo {
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+  filter: brightness(0) invert(1);
+}
+
+.trusted-logo:hover {
+  opacity: 1;
+}
+
+.trusted-logo svg {
+  height: 28px;
+  width: auto;
+}
+
+@media (max-width: 768px) {
+  .trusted-by-strip .container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .trusted-by-logos {
+    gap: 20px;
+  }
+  
+  .trusted-logo svg {
+    height: 22px;
+  }
+}
+
+/* ----- Testimonials Section ----- */
+.testimonials-section {
+  padding: 80px 0;
+  background: #f8fafc;
+}
+
+.testimonials-carousel-wrap {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.testimonials-carousel {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding: 20px 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.testimonials-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.testimonial-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  padding: 0 20px;
+}
+
+@media (min-width: 768px) {
+  .testimonial-slide {
+    flex: 0 0 calc(50% - 12px);
+  }
+}
+
+.testimonial-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.testimonial-quote {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  color: var(--color-accent);
+}
+
+.testimonial-text {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  margin: 0 0 24px;
+  flex: 1;
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 20px;
+}
+
+.testimonial-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+.testimonial-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.testimonial-info strong {
+  font-size: 0.9375rem;
+  color: var(--color-primary);
+}
+
+.testimonial-info span {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+.testimonials-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.testimonials-carousel-wrap .carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.testimonials-carousel-wrap .carousel-btn--prev {
+  left: -20px;
+}
+
+.testimonials-carousel-wrap .carousel-btn--next {
+  right: -20px;
+}
+
+@media (max-width: 768px) {
+  .testimonials-carousel-wrap .carousel-btn {
+    display: none;
+  }
+}
+
+/* ----- Sticky Mobile CTA ----- */
+.sticky-mobile-cta {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+  z-index: 800;
+  padding: 12px 16px;
+  gap: 12px;
+}
+
+@media (max-width: 768px) {
+  .sticky-mobile-cta {
+    display: flex;
+  }
+  
+  /* Add padding to body so content isn't hidden behind sticky CTA */
+  body {
+    padding-bottom: 72px;
+  }
+}
+
+.sticky-cta-phone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: var(--color-primary);
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  flex: 1;
+}
+
+.sticky-cta-phone:hover {
+  background: #072a47;
+}
+
+.sticky-cta-contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: var(--color-accent);
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  flex: 1;
+}
+
+.sticky-cta-contact:hover {
+  background: var(--color-accent-hover);
+}
+
+/* ----- Enhanced Mega Footer ----- */
+.mega-footer {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.footer-top {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 24px 0;
+}
+
+.footer-cta-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.footer-cta-text h3 {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 4px;
+}
+
+.footer-cta-text p {
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  font-size: 0.9375rem;
+}
+
+.footer-cta-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.footer-phone-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.125rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-phone-btn:hover {
+  color: var(--color-accent);
+}
+
+.footer-main {
+  padding: 60px 0 40px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr repeat(4, 1fr);
+  gap: 40px;
+}
+
+.footer-brand-col {
+  max-width: 320px;
+}
+
+.mega-footer .footer-logo-text {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.mega-footer .footer-company-name {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.mega-footer .footer-company-tagline {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--color-accent);
+  text-transform: uppercase;
+}
+
+.mega-footer .footer-desc {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  margin: 0 0 24px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 12px;
+}
+
+.footer-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  transition: all 0.2s ease;
+}
+
+.footer-social a:hover {
+  background: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+.footer-links-col h4 {
+  color: #fff;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  margin: 0 0 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.footer-links-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links-col li {
+  margin-bottom: 12px;
+}
+
+.footer-links-col a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 0.9375rem;
+  transition: color 0.2s ease;
+}
+
+.footer-links-col a:hover {
+  color: #fff;
+}
+
+.mega-footer .footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 24px 0;
+  background: transparent;
+}
+
+.footer-bottom-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-bottom-inner p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-bottom-links a {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-bottom-links a:hover {
+  color: #fff;
+}
+
+.footer-tagline {
+  color: var(--color-accent) !important;
+  font-weight: 600;
+}
+
+/* Mega Footer Mobile */
+@media (max-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .footer-brand-col {
+    grid-column: 1 / -1;
+    max-width: 100%;
+    text-align: center;
+  }
+  
+  .footer-social {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-cta-strip {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footer-cta-actions {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+  
+  .footer-links-col {
+    text-align: center;
+  }
+  
+  .footer-bottom-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footer-bottom-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
