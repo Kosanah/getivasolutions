@@ -5115,3 +5115,580 @@ body.menu-open .hamburger-line:nth-child(3) {
     grid-template-columns: 1fr;
   }
 }
+
+/* ========================================
+   PHASE 2: Enhanced Features & Polish
+   ======================================== */
+
+/* ----- Awards & Recognition Section ----- */
+.awards-section {
+  padding: 100px 0;
+  background: linear-gradient(180deg, #f8fafc 0%, #fff 100%);
+  position: relative;
+}
+
+.awards-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.awards-header .section-label {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.awards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.award-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 40px 24px;
+  text-align: center;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.award-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.award-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 82, 204, 0.12);
+}
+
+.award-card:hover::before {
+  transform: scaleX(1);
+}
+
+.award-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  background: linear-gradient(135deg, rgba(0, 82, 204, 0.08), rgba(0, 191, 166, 0.08));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+}
+
+.award-card:hover .award-icon {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  transform: scale(1.1);
+}
+
+.award-icon svg {
+  color: var(--color-primary);
+  transition: color 0.4s ease;
+}
+
+.award-card:hover .award-icon svg {
+  color: #fff;
+}
+
+.award-card h4 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 8px;
+}
+
+.award-card p {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* Awards Responsive */
+@media (max-width: 900px) {
+  .awards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .awards-section {
+    padding: 60px 0;
+  }
+  
+  .awards-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .award-card {
+    padding: 32px 20px;
+  }
+}
+
+/* ----- Insights / Blog Section ----- */
+.insights-section {
+  padding: 100px 0;
+  background: #fff;
+}
+
+.insights-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.insights-header-text {
+  max-width: 600px;
+}
+
+.insights-header-text .section-label {
+  display: inline-block;
+  color: var(--color-primary);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.insights-header-text .section-title {
+  text-align: left;
+  margin-bottom: 12px;
+}
+
+.insights-header-text .section-intro {
+  text-align: left;
+  margin: 0;
+}
+
+.insights-view-all {
+  flex-shrink: 0;
+}
+
+.insights-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 32px;
+}
+
+.insight-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.insight-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 48px rgba(0, 82, 204, 0.12);
+}
+
+.insight-image {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  transition: transform 0.6s ease;
+}
+
+.insight-card:hover .insight-image {
+  transform: scale(1.05);
+}
+
+.insight-card-featured .insight-image {
+  height: 280px;
+}
+
+.insight-content {
+  padding: 28px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.insight-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.insight-category {
+  background: linear-gradient(135deg, rgba(0, 82, 204, 0.1), rgba(0, 191, 166, 0.1));
+  color: var(--color-primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.insight-date {
+  color: var(--color-text-muted);
+  font-size: 0.8125rem;
+}
+
+.insight-content h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 12px;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+.insight-card:hover .insight-content h3 {
+  color: var(--color-primary);
+}
+
+.insight-card-featured .insight-content h3 {
+  font-size: 1.5rem;
+}
+
+.insight-content p {
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin: 0 0 20px;
+  flex: 1;
+}
+
+.insight-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-top: auto;
+}
+
+.insight-link svg {
+  transition: transform 0.3s ease;
+}
+
+.insight-link:hover {
+  color: var(--color-accent);
+}
+
+.insight-link:hover svg {
+  transform: translateX(4px);
+}
+
+/* Insights Responsive */
+@media (max-width: 1024px) {
+  .insights-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .insight-card-featured {
+    grid-column: span 2;
+  }
+  
+  .insight-card-featured .insight-image {
+    height: 240px;
+  }
+}
+
+@media (max-width: 640px) {
+  .insights-section {
+    padding: 60px 0;
+  }
+  
+  .insights-header {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+  
+  .insights-header-text .section-title,
+  .insights-header-text .section-intro {
+    text-align: center;
+  }
+  
+  .insights-view-all {
+    align-self: center;
+  }
+  
+  .insights-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .insight-card-featured {
+    grid-column: span 1;
+  }
+  
+  .insight-card-featured .insight-image,
+  .insight-image {
+    height: 180px;
+  }
+  
+  .insight-content {
+    padding: 20px;
+  }
+  
+  .insight-content h3,
+  .insight-card-featured .insight-content h3 {
+    font-size: 1.125rem;
+  }
+}
+
+/* ----- Enhanced Service Cards Hover (Phase 2) ----- */
+.service-card-new {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card-new::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-card-new:hover::after {
+  transform: scaleX(1);
+}
+
+.service-card-new:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 24px 64px rgba(0, 82, 204, 0.2);
+}
+
+.service-card-new .service-icon {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-card-new:hover .service-icon {
+  transform: scale(1.15) rotate(5deg);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+}
+
+.service-card-new:hover .service-icon svg {
+  stroke: #fff;
+}
+
+/* ----- Enhanced Stats Section (Phase 2) ----- */
+.stats-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.stats-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0, 191, 166, 0.03) 0%, transparent 50%);
+  animation: statsPulse 8s ease-in-out infinite;
+}
+
+@keyframes statsPulse {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
+
+.stat-item {
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stat-item::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  background: linear-gradient(135deg, rgba(0, 82, 204, 0.1), rgba(0, 191, 166, 0.1));
+  border-radius: 16px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.stat-item:hover::before {
+  opacity: 1;
+}
+
+.stat-item:hover {
+  transform: translateY(-4px);
+}
+
+.stat-value {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ----- Smooth Scroll & Micro-interactions (Phase 2) ----- */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Button ripple effect */
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn:active::after {
+  width: 300px;
+  height: 300px;
+}
+
+/* Enhanced focus states */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* Testimonial card enhancements */
+.testimonial-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 48px rgba(0, 82, 204, 0.2);
+}
+
+/* Why Choose feature hover */
+.why-choose-feature {
+  transition: all 0.3s ease;
+  padding: 16px;
+  margin: -16px;
+  border-radius: 12px;
+}
+
+.why-choose-feature:hover {
+  background: rgba(0, 82, 204, 0.04);
+  transform: translateX(8px);
+}
+
+/* Process step enhanced animation */
+.process-step-modern {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.process-step-modern:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+.process-step-modern:hover .process-step-num-modern {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  transform: scale(1.1);
+}
+
+/* Industry card enhanced hover */
+.industry-card-new {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.industry-card-new:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 48px rgba(0, 82, 204, 0.15);
+}
+
+.industry-card-new:hover .industry-icon-wrap {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  transform: rotate(10deg) scale(1.1);
+}
+
+.industry-card-new:hover .industry-icon-wrap svg {
+  stroke: #fff;
+}
+
+/* Logo hover effect */
+.trusted-logo {
+  transition: all 0.3s ease;
+}
+
+.trusted-logo:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+/* Commitment card hover */
+.commitment-card-pro {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.commitment-card-pro:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 48px rgba(0, 82, 204, 0.12);
+  border-color: var(--color-primary);
+}
+
+.commitment-card-pro:hover .commitment-icon-pro {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  transform: scale(1.1);
+}
+
+.commitment-card-pro:hover .commitment-icon-pro svg {
+  stroke: #fff;
+}
+
+/* Partner logo card hover */
+.logo-card-clean {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logo-card-clean:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
