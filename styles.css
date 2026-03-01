@@ -963,12 +963,6 @@ body.menu-open .nav-backdrop {
   border-radius: 12px;
   transition: all 0.2s ease;
 }
-  right: 0;
-  height: 3px;
-  background: var(--color-gradient-accent);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
 
 .stat-item:hover {
   background: rgba(255, 255, 255, 0.06);
@@ -3957,9 +3951,8 @@ body.menu-open .nav-backdrop {
     justify-content: flex-start;
   }
 }
-  transition: all 0.3s ease;
-}
 
+/* ----- Legacy Footer Social (keep compatible) ----- */
 .footer-social a:hover {
   background: var(--color-primary);
   transform: translateY(-3px);
