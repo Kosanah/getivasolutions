@@ -7,6 +7,41 @@
   'use strict';
 
   var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  
+  // Premium Header Scroll Effect
+  initPremiumHeader();
+  
+  function initPremiumHeader() {
+    var header = document.querySelector('.site-header-premium');
+    if (!header) return;
+    
+    var lastScroll = 0;
+    var ticking = false;
+    
+    function updateHeader() {
+      var scrollY = window.scrollY || window.pageYOffset;
+      
+      if (scrollY > 20) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+      
+      lastScroll = scrollY;
+      ticking = false;
+    }
+    
+    window.addEventListener('scroll', function() {
+      if (!ticking) {
+        window.requestAnimationFrame(updateHeader);
+        ticking = true;
+      }
+    }, { passive: true });
+    
+    // Initial check
+    updateHeader();
+  }
+  
   if (reducedMotion) return;
 
   var observerOptions = {
