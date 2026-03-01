@@ -7548,12 +7548,13 @@ button:focus-visible {
 }
 
 /* =============================================================================
-   VALUES SECTION - Insight Global Clean Style
+   VALUES SECTION - Award-Style Motion Effects
    ============================================================================= */
 
 .ig-values-section {
   padding: 100px 0;
-  background: #f8fafc;
+  background: linear-gradient(180deg, #f8fafc 0%, #fff 100%);
+  position: relative;
 }
 
 .ig-values-header {
@@ -7568,7 +7569,10 @@ button:focus-visible {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: var(--color-accent);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: 12px;
 }
 
@@ -7597,22 +7601,78 @@ button:focus-visible {
 .ig-value-card {
   background: #fff;
   padding: 40px 32px;
-  border-bottom: 4px solid var(--color-accent);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.ig-value-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
 }
 
 .ig-value-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(10, 37, 64, 0.1);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 82, 204, 0.12);
+}
+
+.ig-value-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Value Icon - Award Style */
+.ig-value-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  background: linear-gradient(135deg, rgba(0, 82, 204, 0.08), rgba(0, 191, 166, 0.08));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+}
+
+.ig-value-card:hover .ig-value-icon {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  transform: scale(1.1) rotate(5deg);
+}
+
+.ig-value-icon svg {
+  color: var(--color-primary);
+  transition: all 0.4s ease;
+}
+
+.ig-value-card:hover .ig-value-icon svg {
+  color: #fff;
 }
 
 .ig-value-number {
-  font-size: 3rem;
+  font-size: 1rem;
   font-weight: 800;
-  color: rgba(10, 37, 64, 0.08);
+  color: var(--color-accent);
   line-height: 1;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   font-family: var(--font-display);
+  letter-spacing: 2px;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.ig-value-card:hover .ig-value-number {
+  opacity: 1;
+  transform: scale(1.1);
 }
 
 .ig-value-card h3 {
@@ -7620,6 +7680,11 @@ button:focus-visible {
   font-weight: 700;
   color: var(--color-primary);
   margin: 0 0 12px;
+  transition: color 0.3s ease;
+}
+
+.ig-value-card:hover h3 {
+  color: var(--color-accent);
 }
 
 .ig-value-card p {
@@ -7628,6 +7693,12 @@ button:focus-visible {
   line-height: 1.7;
   margin: 0;
 }
+
+/* Stagger animation delays for cards */
+.ig-value-card:nth-child(1) { transition-delay: 0s; }
+.ig-value-card:nth-child(2) { transition-delay: 0.1s; }
+.ig-value-card:nth-child(3) { transition-delay: 0.2s; }
+.ig-value-card:nth-child(4) { transition-delay: 0.3s; }
 
 /* Responsive */
 @media (max-width: 1024px) {
@@ -7650,8 +7721,14 @@ button:focus-visible {
     padding: 32px 24px;
   }
   
-  .ig-value-number {
-    font-size: 2.5rem;
+  .ig-value-icon {
+    width: 64px;
+    height: 64px;
+  }
+  
+  .ig-value-icon svg {
+    width: 32px;
+    height: 32px;
   }
 }
 
