@@ -2648,6 +2648,126 @@ body.menu-open .nav-backdrop {
   }
 }
 
+/* ----- Corporate Testimonials Style ----- */
+.testimonial-card-corporate {
+  background: linear-gradient(135deg, #fff 0%, #f8fafc 100%);
+  border-radius: 20px;
+  padding: 48px 40px;
+  box-shadow: 0 8px 40px rgba(10, 22, 40, 0.08);
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 82, 204, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-card-corporate::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-accent) 100%);
+}
+
+.testimonial-card-corporate:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 56px rgba(10, 22, 40, 0.12);
+}
+
+.testimonial-company-logo {
+  margin-bottom: 28px;
+}
+
+.company-logo-placeholder {
+  width: 100px;
+  height: 50px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial-quote-corporate {
+  margin-bottom: 28px;
+  position: relative;
+}
+
+.testimonial-quote-corporate::before {
+  content: '"';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 5rem;
+  font-family: Georgia, serif;
+  color: var(--color-accent);
+  opacity: 0.15;
+  line-height: 1;
+}
+
+.testimonial-quote-corporate p {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: var(--color-text);
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial-meta-corporate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.testimonial-rating {
+  color: #f59e0b;
+  font-size: 1.25rem;
+  letter-spacing: 2px;
+}
+
+.testimonial-author-corporate {
+  text-align: center;
+}
+
+.testimonial-author-corporate strong {
+  display: block;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 4px;
+}
+
+.testimonial-author-corporate span {
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+}
+
+/* Responsive Corporate Testimonials */
+@media (max-width: 768px) {
+  .testimonial-card-corporate {
+    padding: 36px 24px;
+  }
+  
+  .testimonial-quote-corporate p {
+    font-size: 1.0625rem;
+  }
+  
+  .company-logo-placeholder {
+    width: 80px;
+    height: 40px;
+    font-size: 0.85rem;
+  }
+}
+
 /* ----- CTA Banner ----- */
 .cta-banner {
   background: var(--color-bg-dark);
