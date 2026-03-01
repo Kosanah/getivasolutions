@@ -139,6 +139,7 @@ body {
   right: 0;
   height: 3px;
   background: linear-gradient(90deg, var(--color-accent) 0%, #0077b6 50%, var(--color-primary) 100%);
+  pointer-events: none;
 }
 
 .site-header-inner {
@@ -354,12 +355,14 @@ body.menu-open .hamburger-line:nth-child(3) {
     z-index: 999;
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
     transition: opacity 0.3s ease, visibility 0.3s ease;
   }
   
   body.menu-open .nav-backdrop {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
   }
   
   .main-nav {
