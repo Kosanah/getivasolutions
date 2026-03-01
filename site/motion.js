@@ -450,44 +450,35 @@
   initServicesCarousel();
   
   // ===============================
-  // Partners Section - Metrics Animation
+  // Partners Section - Stats Animation
   // ===============================
-  function initPartnersMetrics() {
-    var metricsSection = document.querySelector('.partners-metrics');
-    var metricCards = document.querySelectorAll('.metric-card');
-    var metricNumbers = document.querySelectorAll('.metric-number[data-count]');
+  function initPartnersStats() {
+    var statsRow = document.querySelector('.partners-stats-row');
+    var statNums = document.querySelectorAll('.stat-num[data-count]');
     
-    if (!metricsSection || metricCards.length === 0) return;
+    if (!statsRow || statNums.length === 0) return;
     
-    // Animate metrics on scroll
-    var metricsObserver = new IntersectionObserver(function(entries) {
+    var statsObserver = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
         if (!entry.isIntersecting) return;
-        metricsObserver.unobserve(entry.target);
+        statsObserver.unobserve(entry.target);
         
-        // Animate each metric card with stagger
-        metricCards.forEach(function(card, index) {
-          setTimeout(function() {
-            card.classList.add('animate');
-          }, index * 150);
-        });
-        
-        // Count up numbers
-        metricNumbers.forEach(function(el, index) {
+        // Count up numbers with stagger
+        statNums.forEach(function(el, index) {
           var count = parseInt(el.getAttribute('data-count'), 10);
           if (isNaN(count)) return;
           
           setTimeout(function() {
-            animateMetricValue(el, 0, count, 2000);
-          }, index * 150);
+            animateStatValue(el, 0, count, 1800);
+          }, index * 200);
         });
       });
     }, { threshold: 0.3 });
     
-    metricsObserver.observe(metricsSection);
+    statsObserver.observe(statsRow);
   }
   
-  function animateMetricValue(el, start, end, duration) {
+  function animateStatValue(el, start, end, duration) {
     el.textContent = start;
     var startTime = null;
     
@@ -503,38 +494,5 @@
     window.requestAnimationFrame(step);
   }
   
-  initPartnersMetrics();
-  
-  // ===============================
-  // Partners Cards - Interactive Effects
-  // ===============================
-  function initPartnerCards() {
-    var partnerCards = document.querySelectorAll('.partner-card-rich');
-    
-    partnerCards.forEach(function(card) {
-      card.addEventListener('mouseenter', function() {
-        // Add active state
-        this.style.zIndex = '10';
-      });
-      
-      card.addEventListener('mouseleave', function() {
-        this.style.zIndex = '';
-      });
-      
-      // Mouse move effect for glow
-      card.addEventListener('mousemove', function(e) {
-        var rect = this.getBoundingClientRect();
-        var x = e.clientX - rect.left;
-        var y = e.clientY - rect.top;
-        
-        var glow = this.querySelector('.card-glow');
-        if (glow) {
-          glow.style.left = (x - rect.width) + 'px';
-          glow.style.top = (y - rect.height) + 'px';
-        }
-      });
-    });
-  }
-  
-  initPartnerCards();
+  initPartnersStats();
 })();
