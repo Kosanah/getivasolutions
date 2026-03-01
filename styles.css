@@ -703,6 +703,113 @@ body.menu-open .nav-backdrop {
   }
 }
 
+/* ----- Trusted By / Client Logos Section ----- */
+.trusted-by-section {
+  background: #f8fafc;
+  padding: 48px 0;
+  overflow: hidden;
+}
+
+.trusted-by-label {
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  margin: 0 0 32px;
+}
+
+.client-logos-marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.client-logos-marquee::before,
+.client-logos-marquee::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.client-logos-marquee::before {
+  left: 0;
+  background: linear-gradient(90deg, #f8fafc 0%, transparent 100%);
+}
+
+.client-logos-marquee::after {
+  right: 0;
+  background: linear-gradient(90deg, transparent 0%, #f8fafc 100%);
+}
+
+.client-logos-track {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  animation: marquee 30s linear infinite;
+  width: max-content;
+}
+
+.client-logos-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.client-logo-item {
+  flex-shrink: 0;
+  padding: 16px 32px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+}
+
+.client-logo-item:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+  border-color: var(--color-accent);
+}
+
+.client-logo-text {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #374151;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .trusted-by-section {
+    padding: 36px 0;
+  }
+  
+  .client-logos-track {
+    gap: 40px;
+  }
+  
+  .client-logo-item {
+    padding: 12px 24px;
+  }
+  
+  .client-logo-text {
+    font-size: 1rem;
+  }
+}
+
 /* ----- Industries Section (Carousel like Testimonials) ----- */
 .industries-section {
   background: var(--color-bg-alt);
