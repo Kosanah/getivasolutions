@@ -3150,382 +3150,273 @@ body.menu-open .nav-backdrop {
   }
 }
 
-/* ----- Our Commitment Section ----- */
-/* ----- Rich Commitment Section ----- */
-.commitment-section-rich {
-  position: relative;
-  background: linear-gradient(135deg, #0a1628 0%, #0f2847 50%, #0a1628 100%);
+/* ----- Professional Commitment Section ----- */
+.commitment-section-pro {
   padding: 100px 32px;
-  overflow: hidden;
+  background: #fff;
 }
 
-.commitment-bg-elements {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-.commitment-orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.4;
-  animation: orbFloat 20s ease-in-out infinite;
-}
-
-.commitment-orb-1 {
-  width: 400px;
-  height: 400px;
-  background: linear-gradient(135deg, var(--color-primary) 0%, #0066cc 100%);
-  top: -10%;
-  left: -5%;
-  animation-delay: 0s;
-}
-
-.commitment-orb-2 {
-  width: 300px;
-  height: 300px;
-  background: linear-gradient(135deg, var(--color-accent) 0%, #00bf5c 100%);
-  bottom: -5%;
-  right: 10%;
-  animation-delay: -7s;
-}
-
-.commitment-orb-3 {
-  width: 200px;
-  height: 200px;
-  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-  top: 40%;
-  right: -3%;
-  animation-delay: -14s;
-}
-
-@keyframes orbFloat {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  25% { transform: translate(30px, -30px) scale(1.05); }
-  50% { transform: translate(-20px, 20px) scale(0.95); }
-  75% { transform: translate(20px, 30px) scale(1.02); }
-}
-
-.commitment-grid-lines {
-  position: absolute;
-  inset: 0;
-  background-image: 
-    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
-  animation: gridMove 30s linear infinite;
-}
-
-@keyframes gridMove {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(60px, 60px); }
-}
-
-.commitment-header {
+.commitment-header-pro {
   text-align: center;
   margin-bottom: 60px;
-  position: relative;
-  z-index: 2;
 }
 
-.commitment-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: linear-gradient(135deg, rgba(0, 166, 81, 0.2) 0%, rgba(0, 166, 81, 0.1) 100%);
-  border: 1px solid rgba(0, 166, 81, 0.3);
+.commitment-label {
+  display: inline-block;
   color: var(--color-accent);
-  padding: 10px 20px;
-  border-radius: 50px;
   font-size: 0.875rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 20px;
-  animation: badgePulse 3s ease-in-out infinite;
-}
-
-@keyframes badgePulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 166, 81, 0.3); }
-  50% { box-shadow: 0 0 0 10px rgba(0, 166, 81, 0); }
-}
-
-.commitment-title {
-  color: #fff !important;
-  font-size: 2.75rem;
-  font-weight: 800;
+  letter-spacing: 0.1em;
   margin-bottom: 16px;
-  background: linear-gradient(135deg, #fff 0%, #e0e7ff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
-.commitment-subtitle {
-  color: rgba(255, 255, 255, 0.7) !important;
-  font-size: 1.125rem;
-  max-width: 600px;
+.commitment-header-pro .section-title {
+  margin-bottom: 12px;
+}
+
+.commitment-header-pro .section-intro {
+  max-width: 560px;
   margin: 0 auto;
 }
 
-.commitment-grid-rich {
+.commitment-layout {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: start;
   max-width: var(--max-width);
   margin: 0 auto;
+}
+
+/* Image Feature */
+.commitment-image-feature {
   position: relative;
-  z-index: 2;
+  height: 100%;
+  min-height: 600px;
 }
 
-.commitment-card-rich {
+.commitment-image-main {
   position: relative;
-  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-radius: 24px;
-  padding: 36px 28px 32px;
-  border: 1px solid rgba(255,255,255,0.1);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  overflow: hidden;
-}
-
-.commitment-card-rich::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.02) 100%);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.commitment-card-rich:hover {
-  transform: translateY(-8px) scale(1.02);
-  border-color: rgba(0, 166, 81, 0.4);
-  box-shadow: 
-    0 20px 60px rgba(0, 0, 0, 0.3),
-    0 0 40px rgba(0, 166, 81, 0.15);
-}
-
-.commitment-card-rich:hover::before {
-  opacity: 1;
-}
-
-.card-glow {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100px;
-  height: 100px;
-  background: radial-gradient(circle, rgba(0, 166, 81, 0.3) 0%, transparent 70%);
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-
-.commitment-card-rich:hover .card-glow {
-  opacity: 1;
-}
-
-.card-number {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 3rem;
-  font-weight: 900;
-  color: rgba(255,255,255,0.04);
-  line-height: 1;
-  transition: all 0.4s ease;
-}
-
-.commitment-card-rich:hover .card-number {
-  color: rgba(0, 166, 81, 0.15);
-  transform: scale(1.1);
-}
-
-.commitment-icon-rich {
-  position: relative;
-  width: 64px;
-  height: 64px;
-  margin-bottom: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, var(--color-primary) 0%, #0066cc 100%);
-  border-radius: 16px;
-  color: #fff;
-  box-shadow: 
-    0 8px 24px rgba(0, 82, 204, 0.3),
-    inset 0 1px 0 rgba(255,255,255,0.2);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.icon-ring {
-  position: absolute;
-  inset: -4px;
-  border: 2px solid transparent;
   border-radius: 20px;
-  background: linear-gradient(135deg, rgba(0, 166, 81, 0.5), rgba(0, 82, 204, 0.5)) border-box;
-  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  opacity: 0;
-  transition: opacity 0.4s ease;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+  height: 420px;
 }
 
-.commitment-card-rich:hover .icon-ring {
-  opacity: 1;
-  animation: ringRotate 4s linear infinite;
+.commitment-image-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-@keyframes ringRotate {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-.commitment-card-rich:hover .commitment-icon-rich {
-  background: linear-gradient(135deg, var(--color-accent) 0%, #00bf5c 100%);
-  transform: scale(1.1) rotate(-5deg);
-  box-shadow: 
-    0 12px 32px rgba(0, 166, 81, 0.4),
-    inset 0 1px 0 rgba(255,255,255,0.3);
-}
-
-.card-content h3 {
+.commitment-image-overlay {
+  position: absolute;
+  bottom: 100px;
+  left: -20px;
+  background: var(--color-primary);
   color: #fff;
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin: 0 0 12px;
-  transition: color 0.3s ease;
-}
-
-.commitment-card-rich:hover .card-content h3 {
-  color: var(--color-accent);
-}
-
-.card-content p {
-  color: rgba(255,255,255,0.6);
-  font-size: 0.9375rem;
-  line-height: 1.65;
-  margin: 0 0 20px;
-}
-
-.card-stat {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-  padding-top: 16px;
-  border-top: 1px solid rgba(255,255,255,0.1);
-}
-
-.stat-number {
-  font-size: 1.75rem;
-  font-weight: 800;
-  background: linear-gradient(135deg, var(--color-accent) 0%, #00bf5c 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.stat-label {
-  color: rgba(255,255,255,0.5);
-  font-size: 0.8125rem;
-  font-weight: 500;
-}
-
-/* Trust Bar */
-.commitment-trust-bar {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 32px;
-  margin-top: 60px;
-  padding: 28px 40px;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 100px;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
+  padding: 24px 28px;
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(0, 82, 204, 0.3);
   z-index: 2;
 }
 
-.trust-item {
+.overlay-stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.overlay-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.overlay-text {
+  font-size: 0.875rem;
+  opacity: 0.9;
+  margin-top: 4px;
+}
+
+.commitment-image-accent {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 200px;
+  height: 150px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  border: 4px solid #fff;
+}
+
+.commitment-image-accent img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Professional Cards */
+.commitment-cards-pro {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.commitment-card-pro {
   display: flex;
   align-items: center;
-  gap: 10px;
-  color: rgba(255,255,255,0.7);
-  font-size: 0.9375rem;
-  font-weight: 500;
+  gap: 20px;
+  padding: 24px 28px;
+  background: #f8fafc;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.commitment-card-pro:hover {
+  background: #fff;
+  border-color: var(--color-primary);
+  box-shadow: 0 8px 32px rgba(0, 82, 204, 0.1);
+  transform: translateX(8px);
+}
+
+.card-icon-pro {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #0066cc 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
   transition: all 0.3s ease;
 }
 
-.trust-item svg {
+.commitment-card-pro:hover .card-icon-pro {
+  background: linear-gradient(135deg, var(--color-accent) 0%, #00bf5c 100%);
+  transform: scale(1.05);
+}
+
+.card-body-pro {
+  flex: 1;
+}
+
+.card-body-pro h3 {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin: 0 0 4px;
+}
+
+.card-body-pro p {
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.card-metric {
+  flex-shrink: 0;
+  background: linear-gradient(135deg, rgba(0, 166, 81, 0.1) 0%, rgba(0, 166, 81, 0.05) 100%);
   color: var(--color-accent);
-  opacity: 0.8;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  padding: 8px 14px;
+  border-radius: 8px;
+  white-space: nowrap;
 }
 
-.trust-item:hover {
+/* Trust Bar Professional */
+.commitment-trust-pro {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 60px;
+  padding: 32px 48px;
+  background: #f8fafc;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+}
+
+.trust-item-pro {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--color-text);
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+.trust-check {
+  width: 28px;
+  height: 28px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #fff;
-}
-
-.trust-item:hover svg {
-  opacity: 1;
 }
 
 /* Responsive */
 @media (max-width: 1024px) {
-  .commitment-grid-rich {
-    grid-template-columns: repeat(2, 1fr);
+  .commitment-layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
   }
   
-  .commitment-trust-bar {
-    border-radius: 24px;
-    padding: 24px 32px;
-    gap: 24px;
+  .commitment-image-feature {
+    min-height: auto;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .commitment-image-main {
+    height: 320px;
+  }
+  
+  .commitment-image-overlay {
+    bottom: 60px;
+    left: 0;
+  }
+  
+  .commitment-image-accent {
+    width: 160px;
+    height: 120px;
   }
 }
 
 @media (max-width: 768px) {
-  .commitment-section-rich {
-    padding: 80px 24px;
+  .commitment-section-pro {
+    padding: 60px 20px;
   }
   
-  .commitment-title {
-    font-size: 2rem;
-  }
-  
-  .commitment-grid-rich {
-    grid-template-columns: 1fr;
-    max-width: 440px;
-    gap: 20px;
-  }
-  
-  .commitment-card-rich {
-    padding: 28px 24px;
-  }
-  
-  .commitment-trust-bar {
-    flex-direction: column;
-    border-radius: 20px;
+  .commitment-card-pro {
+    flex-wrap: wrap;
+    padding: 20px;
     gap: 16px;
-    align-items: center;
+  }
+  
+  .card-metric {
+    width: 100%;
     text-align: center;
   }
   
-  .trust-item {
-    justify-content: center;
+  .commitment-trust-pro {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 24px;
   }
-}
-
-@media (max-width: 480px) {
-  .commitment-orb-1 { width: 250px; height: 250px; }
-  .commitment-orb-2 { width: 180px; height: 180px; }
-  .commitment-orb-3 { width: 120px; height: 120px; }
+  
+  .commitment-image-feature {
+    display: none;
+  }
 }
 
 /* ----- CTA Banner ----- */
