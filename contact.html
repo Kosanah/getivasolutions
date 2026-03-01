@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us — Getiva Solutions | IT Staffing & Workforce Solutions</title>
+  <meta name="description" content="Contact Getiva Solutions for IT staffing, workforce solutions, and consulting. Reach our client services or recruiting team. We respond within one business day.">
+  <meta name="keywords" content="contact Getiva Solutions, IT staffing contact, hire IT talent, submit resume">
+  <meta property="og:title" content="Contact Us — Getiva Solutions">
+  <meta property="og:description" content="Whether you need to hire talent or find your next role, we want to hear from you.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="img/logo.png" type="image/png">
+  <link rel="canonical" href="https://getivasolutions.com/contact.html">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="motion.css">
+  <style>
+    /* Rich UI Styles for Contact Page */
+    .contact-hero {
+      background: linear-gradient(135deg, #0a1628 0%, #0f2137 50%, #1a365d 100%);
+      color: #fff;
+      padding: 80px 32px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url('https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1600&q=80') center/cover;
+      opacity: 0.12;
+    }
+    .contact-hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .contact-hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      margin: 0 0 16px;
+      animation: fadeInUp 0.6s ease;
+    }
+    .contact-hero .lead {
+      font-size: 1.15rem;
+      opacity: 0.9;
+      margin: 0;
+      animation: fadeInUp 0.6s ease 0.1s both;
+    }
+    
+    /* Contact Methods Grid */
+    .contact-methods {
+      padding: 80px 32px;
+      background: #f8fafc;
+    }
+    .methods-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .method-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      border: 1px solid #e5e7eb;
+      text-align: center;
+      transition: all 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    .method-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .method-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+      border-color: var(--color-accent);
+    }
+    .method-icon {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, var(--color-accent) 0%, #00bf5c 100%);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      color: #fff;
+    }
+    .method-card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin: 0 0 12px;
+    }
+    .method-card p {
+      font-size: 0.95rem;
+      color: #64748b;
+      line-height: 1.6;
+      margin: 0 0 16px;
+    }
+    .method-card a.method-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--color-accent);
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .method-card a.method-link:hover {
+      gap: 12px;
+    }
+    
+    /* Contact Form Section */
+    .contact-form-section {
+      padding: 80px 32px;
+      background: #fff;
+    }
+    .form-container {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 60px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .form-info {
+      opacity: 0;
+      transform: translateX(-20px);
+      transition: all 0.6s ease;
+    }
+    .form-info.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .form-info .section-label {
+      color: var(--color-accent);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.85rem;
+      display: block;
+      margin-bottom: 12px;
+    }
+    .form-info h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin: 0 0 20px;
+    }
+    .form-info p {
+      color: #64748b;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin: 0 0 32px;
+    }
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .contact-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .detail-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--color-accent) 0%, #00bf5c 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: #fff;
+    }
+    .detail-content h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #1a1a2e;
+      margin: 0 0 4px;
+    }
+    .detail-content p, .detail-content a {
+      font-size: 0.95rem;
+      color: #64748b;
+      margin: 0;
+      text-decoration: none;
+    }
+    .detail-content a:hover {
+      color: var(--color-accent);
+    }
+    
+    /* Enhanced Form Styles */
+    .rich-form {
+      background: #f8fafc;
+      border-radius: 20px;
+      padding: 40px;
+      border: 1px solid #e5e7eb;
+      opacity: 0;
+      transform: translateX(20px);
+      transition: all 0.6s ease 0.2s;
+    }
+    .rich-form.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .rich-form .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .rich-form .form-group {
+      margin-bottom: 20px;
+    }
+    .rich-form label {
+      display: block;
+      font-weight: 600;
+      color: #1a1a2e;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+    .rich-form input,
+    .rich-form select,
+    .rich-form textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 2px solid #e5e7eb;
+      border-radius: 10px;
+      font-size: 1rem;
+      transition: all 0.2s;
+      background: #fff;
+    }
+    .rich-form input:focus,
+    .rich-form select:focus,
+    .rich-form textarea:focus {
+      border-color: var(--color-accent);
+      outline: none;
+      box-shadow: 0 0 0 4px rgba(0, 166, 81, 0.1);
+    }
+    .rich-form textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    .rich-form .btn {
+      width: 100%;
+      padding: 16px;
+      font-size: 1.05rem;
+    }
+    .form-note {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      margin-top: 12px;
+      text-align: center;
+    }
+    
+    /* FAQ Section */
+    .faq-section {
+      padding: 80px 32px;
+      background: linear-gradient(135deg, #0a1628 0%, #0f2137 100%);
+      color: #fff;
+    }
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .faq-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .faq-header .section-label {
+      color: var(--color-accent);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.85rem;
+      display: block;
+      margin-bottom: 12px;
+    }
+    .faq-header h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 0;
+    }
+    .faq-item {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      margin-bottom: 12px;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+    }
+    .faq-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .faq-question {
+      padding: 20px 24px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.2s;
+    }
+    .faq-question:hover {
+      background: rgba(255,255,255,0.05);
+    }
+    .faq-question svg {
+      transition: transform 0.3s;
+      flex-shrink: 0;
+    }
+    .faq-item.open .faq-question svg {
+      transform: rotate(180deg);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 200px;
+      padding: 0 24px 20px;
+    }
+    .faq-answer p {
+      margin: 0;
+      opacity: 0.85;
+      line-height: 1.7;
+    }
+    
+    /* Office Section */
+    .office-section {
+      padding: 80px 32px;
+      background: #f8fafc;
+    }
+    .office-card {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+    }
+    .office-map {
+      min-height: 300px;
+      background: #e5e7eb;
+    }
+    .office-map iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .office-info {
+      padding: 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .office-info h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin: 0 0 20px;
+    }
+    .office-info address {
+      font-style: normal;
+      color: #64748b;
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+    .office-hours {
+      background: #f8fafc;
+      padding: 16px 20px;
+      border-radius: 10px;
+    }
+    .office-hours h4 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #1a1a2e;
+      margin: 0 0 8px;
+    }
+    .office-hours p {
+      margin: 0;
+      color: #64748b;
+      font-size: 0.9rem;
+    }
+    
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @media (max-width: 768px) {
+      .form-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .rich-form .form-row {
+        grid-template-columns: 1fr;
+      }
+      .office-card {
+        grid-template-columns: 1fr;
+      }
+      .office-map {
+        height: 250px;
+      }
+      .office-info {
+        padding: 32px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="index.html" class="logo">
+        <img src="img/logo.png" alt="Getiva Solutions" class="logo-img">
+        <span class="logo-text">
+          <span class="logo-company">Getiva Solutions</span>
+          <span class="logo-tagline">We Get It Done For You</span>
+        </span>
+      </a>
+      <button type="button" class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
+      <nav class="main-nav" id="main-nav" aria-label="Main">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="candidates.html">Candidates</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+          <li class="nav-cta">
+            <a href="contact.html" class="btn btn-primary">Hire Talent</a>
+            <a href="careers.html" class="btn btn-secondary">Find Jobs</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main" id="main-content">
+    <!-- HERO for Contact Page -->
+    <section class="page-hero-video">
+      <div class="hero-video-bg hero-animated-bg">
+        <img src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1920&q=80" alt="Contact us" class="hero-bg-image">
+      </div>
+      <div class="hero-video-overlay"></div>
+      <div class="page-hero-content">
+        <span class="hero-eyebrow">Contact Us</span>
+        <h1>Let's Connect</h1>
+        <p>Whether you're looking to hire top IT talent or explore career opportunities, we're here to help. Reach out and let's start a conversation.</p>
+      </div>
+    </section>
+
+    <!-- Contact Methods -->
+    <section class="contact-methods">
+      <div class="methods-grid">
+        <div class="method-card">
+          <div class="method-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+            </svg>
+          </div>
+          <h3>Client Services</h3>
+          <p>For hiring managers and procurement teams seeking IT staffing and workforce solutions.</p>
+          <a href="mailto:clients@getivasolutions.com" class="method-link">
+            clients@getivasolutions.com
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <div class="method-card">
+          <div class="method-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <h3>Recruiting Team</h3>
+          <p>For job seekers and professionals exploring contract or full-time opportunities.</p>
+          <a href="mailto:careers@getivasolutions.com" class="method-link">
+            careers@getivasolutions.com
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <div class="method-card">
+          <div class="method-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+          </div>
+          <h3>Call Us</h3>
+          <p>Speak directly with our team for urgent inquiries or to schedule a consultation.</p>
+          <a href="tel:+13147059794" class="method-link">
+            +1 (314) 705-9794
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <div class="method-card">
+          <div class="method-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </div>
+          <h3>General Inquiries</h3>
+          <p>For all other questions about Getiva Solutions, partnerships, or media requests.</p>
+          <a href="mailto:info@getivasolutions.com" class="method-link">
+            info@getivasolutions.com
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form-section">
+      <div class="form-container">
+        <div class="form-info">
+          <span class="section-label">Send a Message</span>
+          <h2>We'd Love to Hear From You</h2>
+          <p>Fill out the form and our team will get back to you within one business day. For urgent client needs, please note "Urgent" in your message.</p>
+          
+          <div class="contact-details">
+            <div class="contact-detail">
+              <div class="detail-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </div>
+              <div class="detail-content">
+                <h4>Office Address</h4>
+                <p>117 S Lexington St Ste 100<br>Harrisonville, MO 64701</p>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <div class="detail-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M12 6v6l4 2"/>
+                </svg>
+              </div>
+              <div class="detail-content">
+                <h4>Business Hours</h4>
+                <p>Monday – Friday: 9:00 AM – 6:00 PM CST</p>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <div class="detail-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                  <polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+              </div>
+              <div class="detail-content">
+                <h4>Response Time</h4>
+                <p>Within 24 business hours</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <form class="rich-form" id="contact-form">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" required placeholder="John Smith">
+            </div>
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required placeholder="john@company.com">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000">
+            </div>
+            <div class="form-group">
+              <label for="role">I am a</label>
+              <select id="role" name="role">
+                <option value="client">Client / Hiring Organization</option>
+                <option value="candidate">Candidate / Job Seeker</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="company">Company Name</label>
+            <input type="text" id="company" name="company" placeholder="Your company (if applicable)">
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject *</label>
+            <input type="text" id="subject" name="subject" required placeholder="How can we help?">
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" required placeholder="Tell us more about your needs..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="attachment">Attach Document (optional)</label>
+            <input type="file" id="attachment" name="attachment" accept=".pdf,.doc,.docx,.odt,.odf,.rtf,.txt,.jpg,.jpeg,.png,.gif,.webp">
+          </div>
+
+          <button type="submit" class="btn btn-primary">Send Message</button>
+          <p class="form-note">We typically respond within one business day.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Contact Stats Strip (Phase 3) -->
+    <section class="stats-section contact-stats">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="stat-value" data-count="24" data-suffix="hrs">24hrs</span>
+            <span class="stat-label">Response Time</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value" data-count="98" data-suffix="%">98%</span>
+            <span class="stat-label">Client Satisfaction</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">National</span>
+            <span class="stat-label">US Coverage</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value" data-count="5" data-suffix="+">5+</span>
+            <span class="stat-label">Industries Served</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Awards & Certifications (Phase 3) -->
+    <section class="awards-section">
+      <div class="container">
+        <div class="awards-header">
+          <span class="section-label">Trust & Security</span>
+          <h2 class="section-title text-center">Enterprise Ready</h2>
+          <p class="section-intro text-center">Compliance and standards you can rely on</p>
+        </div>
+        <div class="awards-grid">
+          <div class="award-card">
+            <div class="award-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 15l-3.5 2.1.67-4-2.9-2.8 4-.6L12 6l1.73 3.7 4 .6-2.9 2.8.67 4z"/>
+                <circle cx="12" cy="12" r="10"/>
+              </svg>
+            </div>
+            <h4>MBE Certified</h4>
+            <p>Minority Business Enterprise</p>
+          </div>
+          <div class="award-card">
+            <div class="award-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <path d="M9 12l2 2 4-4"/>
+              </svg>
+            </div>
+            <h4>SOC 2 Compliant</h4>
+            <p>Enterprise Security</p>
+          </div>
+          <div class="award-card">
+            <div class="award-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="2" y="3" width="20" height="14" rx="2"/>
+                <path d="M8 21h8"/>
+                <path d="M12 17v4"/>
+                <path d="M7 8h.01M7 12h.01M17 8h-.01M17 12h-.01M12 8v4"/>
+              </svg>
+            </div>
+            <h4>E-Verify</h4>
+            <p>Employment Verification</p>
+          </div>
+          <div class="award-card">
+            <div class="award-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+              </svg>
+            </div>
+            <h4>NDA Protected</h4>
+            <p>Confidentiality Assured</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <div class="faq-container">
+        <div class="faq-header">
+          <span class="section-label">FAQ</span>
+          <h2>Frequently Asked Questions</h2>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            How quickly can you fill a position?
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="faq-answer">
+            <p>We typically present qualified candidates within 24-48 hours for most IT roles. Complex or specialized positions may take 3-5 business days. Our pre-vetted talent network allows us to move quickly while maintaining quality.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            What industries do you serve?
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="faq-answer">
+            <p>We specialize in Financial Services, Healthcare, Technology, Government, and Manufacturing. Our recruiters have deep expertise in each sector's specific requirements and compliance needs.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            What types of positions do you fill?
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="faq-answer">
+            <p>We fill contract, contract-to-hire, and full-time positions across IT including software development, cloud/DevOps, data engineering, cybersecurity, project management, and business analysis.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            How do I submit my resume?
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="faq-answer">
+            <p>You can submit your resume through our Careers page, email it directly to careers@getivasolutions.com, or use the contact form above. We'll add you to our talent network and reach out when matching opportunities arise.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Office Section -->
+    <section class="office-section">
+      <div class="office-card">
+        <div class="office-map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3114.8!2d-94.35!3d38.65!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzjCsDM5JzAwLjAiTiA5NMKwMjEnMDAuMCJX!5e0!3m2!1sen!2sus!4v1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="office-info">
+          <h3>Our Headquarters</h3>
+          <address>
+            <strong>Getiva Solutions</strong><br>
+            117 S Lexington St Ste 100<br>
+            Harrisonville, MO 64701<br>
+            United States
+          </address>
+          <div class="office-hours">
+            <h4>Business Hours</h4>
+            <p>Monday – Friday: 9:00 AM – 6:00 PM CST<br>
+            Saturday – Sunday: Closed</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Sticky Mobile CTA -->
+  <div class="sticky-mobile-cta" id="sticky-mobile-cta">
+    <a href="tel:+13147059794" class="sticky-cta-phone">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span>Call Us</span>
+    </a>
+    <a href="mailto:info@getivasolutions.com" class="sticky-cta-contact">
+      <span>Email Us</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+
+  <!-- Enhanced Mega Footer -->
+  <footer class="site-footer mega-footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-cta-strip">
+          <div class="footer-cta-text">
+            <h3>Questions? We're here to help.</h3>
+            <p>Call us toll-free or send us a message.</p>
+          </div>
+          <div class="footer-cta-actions">
+            <a href="tel:+13147059794" class="footer-phone-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span>+1 (314) 705-9794</span>
+            </a>
+            <a href="mailto:info@getivasolutions.com" class="btn btn-primary">Email Us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-main">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand-col">
+            <div class="footer-logo-text">
+              <span class="footer-company-name">Getiva Solutions</span>
+              <span class="footer-company-tagline">WE GET IT DONE FOR YOU</span>
+            </div>
+            <p class="footer-desc">Enterprise IT staffing, workforce solutions, and consulting services. We partner with organizations across the United States to deliver the talent they need.</p>
+            <div class="footer-social">
+              <a href="https://www.linkedin.com/company/getiva-solutions/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              </a>
+              <a href="https://x.com/Getivasolutions" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </a>
+              <a href="https://www.instagram.com/getivasolutions/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="footer-links-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="candidates.html">Candidates</a></li>
+              <li><a href="careers.html">Careers</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-links-col">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="services.html#staffing">IT Staffing</a></li>
+              <li><a href="services.html#workforce">Workforce Solutions</a></li>
+              <li><a href="services.html#consulting">Consulting</a></li>
+              <li><a href="services.html#vendor">Vendor & MSP</a></li>
+            </ul>
+          </div>
+          <div class="footer-links-col">
+            <h4>For Clients</h4>
+            <ul>
+              <li><a href="contact.html">Request Talent</a></li>
+              <li><a href="services.html">Our Services</a></li>
+              <li><a href="about.html">Why Getiva</a></li>
+              <li><a href="contact.html">Contact Sales</a></li>
+            </ul>
+          </div>
+          <div class="footer-links-col">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="candidates.html">Find a Job</a></li>
+              <li><a href="contact.html">Hire Talent</a></li>
+              <li><a href="careers.html">Join Our Team</a></li>
+              <li><a href="about.html">Our Story</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="footer-bottom-inner">
+          <p>© 2026 Getiva Solutions. All rights reserved.</p>
+          <div class="footer-bottom-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Use</a>
+          </div>
+          <p class="footer-tagline">We Get It Done For You.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="nav.js"></script>
+  <script src="motion.js"></script>
+  <script>
+    // Rich UI Animations
+    document.addEventListener('DOMContentLoaded', function() {
+      // Show success message if form was submitted
+      if (window.location.search.includes('submitted=true')) {
+        document.getElementById('contact-form').innerHTML = '<div style="text-align:center;padding:40px;"><div style="width:64px;height:64px;background:linear-gradient(135deg,#00a651,#00bf5c);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><h3 style="color:#059669;margin:0 0 12px;">Message Sent!</h3><p style="color:#64748b;">Thank you for reaching out. We\'ll respond within one business day.</p></div>';
+      }
+
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              entry.target.classList.add('visible');
+            }, index * 100);
+          }
+        });
+      }, observerOptions);
+      
+      document.querySelectorAll('.method-card').forEach(card => observer.observe(card));
+      document.querySelectorAll('.faq-item').forEach(item => observer.observe(item));
+      document.querySelectorAll('.form-info, .rich-form').forEach(el => observer.observe(el));
+      
+      // FAQ Accordion
+      document.querySelectorAll('.faq-question').forEach(question => {
+        question.addEventListener('click', () => {
+          const item = question.parentElement;
+          const isOpen = item.classList.contains('open');
+          
+          // Close all items
+          document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+          
+          // Open clicked item if it wasn't open
+          if (!isOpen) {
+            item.classList.add('open');
+          }
+        });
+      });
+
+      // Form validation enhancement
+      const form = document.getElementById('contact-form');
+      const inputs = form.querySelectorAll('input, select, textarea');
+      
+      inputs.forEach(input => {
+        input.addEventListener('blur', function() {
+          if (this.required && !this.value) {
+            this.style.borderColor = '#ef4444';
+          } else {
+            this.style.borderColor = '#e5e7eb';
+          }
+        });
+        
+        input.addEventListener('focus', function() {
+          this.style.borderColor = 'var(--color-accent)';
+        });
+      });
+    });
+  </script>
+  <script src="email-handler.js"></script>
+  <script src="cookie-consent.js"></script>
+</body>
+</html>
