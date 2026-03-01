@@ -776,9 +776,9 @@ body.menu-open .hamburger-line:nth-child(3) {
 /* ===== PAGE HERO (Secondary pages with video) ===== */
 .page-hero-video {
   position: relative;
-  height: 70vh;
-  min-height: 450px;
-  max-height: 700px;
+  height: 85vh;
+  min-height: 500px;
+  max-height: 900px;
   display: flex;
   align-items: center;
   overflow: hidden;
