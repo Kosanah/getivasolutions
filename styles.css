@@ -712,7 +712,7 @@ body.menu-open .nav-backdrop {
 
 .industries-carousel-wrap {
   position: relative;
-  max-width: 800px;
+  max-width: 720px;
   margin: 0 auto;
   padding: 0 60px;
 }
@@ -750,7 +750,7 @@ body.menu-open .nav-backdrop {
 
 .industry-card-image {
   width: 100%;
-  height: 320px;
+  height: 280px;
   background-size: cover;
   background-position: center;
   background-color: var(--color-bg-subtle);
@@ -861,7 +861,7 @@ body.menu-open .nav-backdrop {
   }
   
   .industry-card-image {
-    height: 200px;
+    height: 180px;
   }
   
   .industry-card-content {
@@ -929,7 +929,7 @@ body.menu-open .nav-backdrop {
 
 .services-carousel-wrap {
   position: relative;
-  max-width: 700px;
+  max-width: 720px;
   margin: 0 auto;
   padding: 0 60px;
 }
@@ -1095,7 +1095,7 @@ body.menu-open .nav-backdrop {
   }
   
   .service-card-new .service-card-image {
-    height: 200px;
+    height: 180px;
   }
   
   .service-card-new .service-card-content {
@@ -1619,7 +1619,7 @@ body.menu-open .nav-backdrop {
 
 .who-we-serve-image {
   width: 100%;
-  height: 200px;
+  height: 220px;
   background-size: cover;
   background-position: center;
   background-color: var(--color-bg-subtle);
