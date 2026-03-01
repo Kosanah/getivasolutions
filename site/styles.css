@@ -795,6 +795,28 @@ body.menu-open .hamburger-line:nth-child(3) {
   object-fit: cover;
 }
 
+/* Animated image background with Ken Burns effect */
+.page-hero-video .hero-animated-bg {
+  overflow: hidden;
+}
+
+.page-hero-video .hero-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: kenBurns 20s ease-in-out infinite alternate;
+  transform-origin: center center;
+}
+
+@keyframes kenBurns {
+  0% {
+    transform: scale(1) translateX(0);
+  }
+  100% {
+    transform: scale(1.1) translateX(-2%);
+  }
+}
+
 .page-hero-video .hero-video-overlay {
   position: absolute;
   inset: 0;
