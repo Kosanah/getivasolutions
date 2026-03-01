@@ -1968,6 +1968,128 @@ body.menu-open .nav-backdrop {
   }
 }
 
+/* ----- Trusted Partners Scrolling Section ----- */
+.trusted-partners-wrap {
+  margin-top: 80px;
+  padding-top: 60px;
+  border-top: 1px solid var(--color-border-light);
+}
+
+.trusted-partners-label {
+  text-align: center;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  margin: 0 0 40px;
+}
+
+.partners-marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 20px 0;
+}
+
+.partners-marquee::before,
+.partners-marquee::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 150px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.partners-marquee::before {
+  left: 0;
+  background: linear-gradient(90deg, #fff 0%, transparent 100%);
+}
+
+.partners-marquee::after {
+  right: 0;
+  background: linear-gradient(90deg, transparent 0%, #fff 100%);
+}
+
+.partners-track {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  animation: partnersScroll 40s linear infinite;
+  width: max-content;
+}
+
+.partners-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes partnersScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.partner-logo-card {
+  flex-shrink: 0;
+  padding: 20px 40px;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+  min-width: 180px;
+  text-align: center;
+}
+
+.partner-logo-card:hover {
+  background: #fff;
+  box-shadow: 0 8px 32px rgba(0, 82, 204, 0.12);
+  border-color: var(--color-primary);
+  transform: translateY(-4px);
+}
+
+.partner-name {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #374151;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.partner-logo-card:hover .partner-name {
+  color: var(--color-primary);
+}
+
+@media (max-width: 768px) {
+  .trusted-partners-wrap {
+    margin-top: 48px;
+    padding-top: 40px;
+  }
+  
+  .partners-track {
+    gap: 24px;
+  }
+  
+  .partner-logo-card {
+    padding: 14px 28px;
+    min-width: 140px;
+  }
+  
+  .partner-name {
+    font-size: 0.9375rem;
+  }
+  
+  .partners-marquee::before,
+  .partners-marquee::after {
+    width: 60px;
+  }
+}
+
 /* ----- Industries visual cards ----- */
 .industries-grid {
   display: grid;
