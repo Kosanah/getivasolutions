@@ -581,55 +581,51 @@
 
         <form class="rich-form" id="contact-form">
 
-          <div class="form-row">
-            <div class="form-group">
-              <label for="name">Full Name *</label>
-              <input type="text" id="name" name="name" required placeholder="John Smith">
+          <form class="rich-form" id="contact-form" action="https://formspree.io/f/yourformid" method="POST">
+          <form class="rich-form" id="contact-form" action="https://formsubmit.co/info@getivasolutions.com" method="POST">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" required placeholder="John Smith">
+              </div>
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required placeholder="john@company.com">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000">
+              </div>
+              <div class="form-group">
+                <label for="role">I am a</label>
+                <select id="role" name="role">
+                  <option value="client">Client / Hiring Organization</option>
+                  <option value="candidate">Candidate / Job Seeker</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
             </div>
             <div class="form-group">
-              <label for="email">Email *</label>
-              <input type="email" id="email" name="email" required placeholder="john@company.com">
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="phone">Phone</label>
-              <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000">
+              <label for="company">Company Name</label>
+              <input type="text" id="company" name="company" placeholder="Your company (if applicable)">
             </div>
             <div class="form-group">
-              <label for="role">I am a</label>
-              <select id="role" name="role">
-                <option value="client">Client / Hiring Organization</option>
-                <option value="candidate">Candidate / Job Seeker</option>
-                <option value="other">Other</option>
-              </select>
+              <label for="subject">Subject *</label>
+              <input type="text" id="subject" name="subject" required placeholder="How can we help?">
             </div>
-          </div>
-
-          <div class="form-group">
-            <label for="company">Company Name</label>
-            <input type="text" id="company" name="company" placeholder="Your company (if applicable)">
-          </div>
-
-          <div class="form-group">
-            <label for="subject">Subject *</label>
-            <input type="text" id="subject" name="subject" required placeholder="How can we help?">
-          </div>
-
-          <div class="form-group">
-            <label for="message">Message *</label>
-            <textarea id="message" name="message" required placeholder="Tell us more about your needs..."></textarea>
-          </div>
-
-          <div class="form-group">
-            <label for="attachment">Attach Document (optional)</label>
-            <input type="file" id="attachment" name="attachment" accept=".pdf,.doc,.docx,.odt,.odf,.rtf,.txt,.jpg,.jpeg,.png,.gif,.webp">
-          </div>
-
-          <button type="submit" class="btn btn-primary">Send Message</button>
-          <p class="form-note">We typically respond within one business day.</p>
-        </form>
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" required placeholder="Tell us more about your needs..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+            <div class="form-group">
+              <label for="attachment">Attach Document (optional)</label>
+              <input type="file" id="attachment" name="attachment" accept=".pdf,.doc,.docx,.odt,.odf,.rtf,.txt,.jpg,.jpeg,.png,.gif,.webp">
+            </div>
+            <p class="form-note">We typically respond within one business day. Max file size: 5MB.</p>
+          </form>
       </div>
     </section>
 
@@ -897,9 +893,7 @@
     // Rich UI Animations
     document.addEventListener('DOMContentLoaded', function() {
       // Show success message if form was submitted
-      if (window.location.search.includes('submitted=true')) {
-        document.getElementById('contact-form').innerHTML = '<div style="text-align:center;padding:40px;"><div style="width:64px;height:64px;background:linear-gradient(135deg,#00a651,#00bf5c);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><h3 style="color:#059669;margin:0 0 12px;">Message Sent!</h3><p style="color:#64748b;">Thank you for reaching out. We\'ll respond within one business day.</p></div>';
-      }
+      // ...existing code...
 
       const observerOptions = {
         threshold: 0.1,
