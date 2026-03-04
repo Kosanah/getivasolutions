@@ -1,0 +1,105 @@
+[
+  {
+    "title": "Sr .Net SQL Developer",
+    "id": "sr-dotnet-sql",
+    "type": "fulltime",
+    "location": "Remote (USA)",
+    "duration": "12+ Months",
+    "posted": "Feb 2026",
+    "description": "We are seeking a highly skilled Sr .Net SQL Developer to join our enterprise client team. You will design, develop, and maintain robust .NET applications and complex SQL Server databases, collaborating with cross-functional teams to deliver scalable business solutions.",
+    "requirements": [
+      "Bachelor's degree in Computer Science or related field",
+      "8+ years of experience in .NET development (C#, ASP.NET, MVC, Web API)",
+      "Strong expertise in SQL Server (T-SQL, performance tuning, SSIS/SSRS a plus)",
+      "Experience with RESTful APIs, Entity Framework, and LINQ",
+      "Excellent problem-solving and communication skills",
+      "US work authorization required"
+    ],
+    "active": true
+  },
+  {
+    "title": "Senior Java Developer",
+    "id": "senior-java",
+    "type": "contract",
+    "location": "Remote (US)",
+    "duration": "12+ months",
+    "posted": "Feb 2026",
+    "description": "Join a Fortune 500 financial services client to build and maintain enterprise Java applications. You'll work with microservices architecture, Spring Boot, and cloud technologies.",
+    "requirements": [
+      "7+ years of Java development experience",
+      "Strong experience with Spring Boot, REST APIs, and microservices",
+      "Experience with AWS or Azure cloud platforms",
+      "Familiarity with CI/CD pipelines and containerization (Docker, Kubernetes)",
+      "Excellent communication skills"
+    ],
+    "active": true
+  },
+  {
+    "title": "Cloud Infrastructure Engineer",
+    "id": "cloud-engineer",
+    "type": "fulltime",
+    "location": "Kansas City, MO (Hybrid)",
+    "duration": "Permanent",
+    "posted": "Feb 2026",
+    "description": "Healthcare technology client seeking a Cloud Infrastructure Engineer to design, implement, and manage cloud infrastructure on AWS and Azure. HIPAA compliance experience preferred.",
+    "requirements": [
+      "5+ years of cloud infrastructure experience",
+      "Strong AWS and/or Azure certifications preferred",
+      "Experience with Terraform, CloudFormation, or similar IaC tools",
+      "Knowledge of security best practices and compliance frameworks",
+      "Healthcare industry experience a plus"
+    ],
+    "active": true
+  },
+  {
+    "title": "Data Analyst",
+    "id": "data-analyst",
+    "type": "contract-to-hire",
+    "location": "St. Louis, MO (On-site)",
+    "duration": "6 months + conversion",
+    "posted": "Feb 2026",
+    "description": "Financial services firm seeking a Data Analyst to transform business data into actionable insights. You'll work with stakeholders to identify trends and support decision-making.",
+    "requirements": [
+      "3+ years of data analysis experience",
+      "Proficiency in SQL, Python, or R",
+      "Experience with BI tools (Tableau, Power BI, or similar)",
+      "Strong analytical and problem-solving skills",
+      "Financial services background preferred"
+    ],
+    "active": true
+  },
+  {
+    "title": "DevOps Engineer",
+    "id": "devops",
+    "type": "contract",
+    "location": "Remote (US)",
+    "duration": "6-12 months",
+    "posted": "Feb 2026",
+    "description": "Technology company seeking a DevOps Engineer to build and maintain CI/CD pipelines, automate infrastructure, and improve deployment processes.",
+    "requirements": [
+      "4+ years of DevOps or SRE experience",
+      "Strong experience with Jenkins, GitLab CI, or GitHub Actions",
+      "Proficiency with Docker, Kubernetes, and container orchestration",
+      "Experience with monitoring tools (Prometheus, Grafana, Datadog)",
+      "Scripting skills (Bash, Python)"
+    ],
+    "active": true
+  },
+  {
+    "title": "IT Project Manager",
+    "id": "project-manager",
+    "type": "fulltime",
+    "location": "Chicago, IL (Hybrid)",
+    "duration": "Permanent",
+    "posted": "Feb 2026",
+    "description": "Enterprise retail client seeking an experienced IT Project Manager to lead technology initiatives from planning through delivery. PMP certification required.",
+    "requirements": [
+      "7+ years of IT project management experience",
+      "PMP or equivalent certification required",
+      "Experience with Agile and Waterfall methodologies",
+      "Strong stakeholder management and communication skills",
+      "Retail or e-commerce experience preferred"
+    ],
+    "active": true
+  }
+]
