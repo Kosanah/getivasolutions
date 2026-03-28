@@ -675,13 +675,11 @@ body.menu-open .hamburger-line:nth-child(3) {
 
 /* Hero quick links (Insight Global style cards at bottom) */
 .hero-quick-links {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  position: relative;
   z-index: 3;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  margin-top: 32px;
 }
 
 .hero-quick-card {
@@ -768,6 +766,7 @@ body.menu-open .hamburger-line:nth-child(3) {
   .hero-quick-links {
     position: relative;
     grid-template-columns: 1fr;
+    margin-top: 24px;
   }
   
   .hero-quick-card {
@@ -1222,7 +1221,11 @@ body.menu-open .hamburger-line:nth-child(3) {
 .industries-section {
   background: var(--color-bg-alt);
   padding: 80px 32px;
-  position: relative;
+  /* Ensure normal document flow and spacing below hero */
+  margin-top: 32px;
+  transform: none;
+  position: static;
+  bottom: auto;
 }
 
 .industries-carousel-wrap {
@@ -1808,7 +1811,8 @@ body.menu-open .hamburger-line:nth-child(3) {
   background: var(--color-bg);
   border-bottom: 1px solid var(--color-border-light);
   padding: 32px 32px 36px;
-  margin-top: -1px;
+/* Removed negative margin to prevent overlap with hero section */
+  margin-top: 0;
 }
 
 .credibility-strip-inner {
