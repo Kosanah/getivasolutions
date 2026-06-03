@@ -174,9 +174,9 @@ body {
 
 .logo-img {
   display: block;
-  height: 52px;
+  height: 64px;
   width: auto;
-  max-width: 60px;
+  max-width: 220px;
   object-fit: contain;
   object-position: left center;
   image-rendering: -webkit-optimize-contrast;
@@ -187,9 +187,7 @@ body {
 }
 
 .logo-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.15;
+  display: none;
 }
 
 .logo-company {
@@ -220,17 +218,8 @@ body {
 
 @media (max-width: 640px) {
   .logo-img {
-    height: 36px;
-    max-width: 40px;
-  }
-  .logo-company {
-    font-size: 1.05rem;
-  }
-  .logo-tagline {
-    display: none;
-  }
-  .logo-text {
-    display: flex;
+    height: 44px;
+    max-width: 160px;
   }
   .logo {
     gap: 10px;
@@ -606,7 +595,7 @@ body.menu-open .hamburger-line:nth-child(3) {
   color: var(--color-accent);
   margin-bottom: 20px;
   padding: 8px 16px;
-  background: rgba(0, 195, 137, 0.15);
+  background: rgba(37, 99, 235, 0.18);
   border-radius: var(--radius-full);
 }
 
